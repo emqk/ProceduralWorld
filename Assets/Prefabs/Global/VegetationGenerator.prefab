@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2236093312390850955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2236093312390850997}
+  - component: {fileID: 2236093312390850954}
+  m_Layer: 0
+  m_Name: VegetationGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2236093312390850997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236093312390850955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 785.1556, y: 590.23206, z: -595.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2236093312390850954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236093312390850955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1408594e376d8e240b4d819e2411725a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generatedNormalTreePrefab: {fileID: 2687678759222213681, guid: 840d552b55e39a0489e4d9fb5b6c9413,
+    type: 3}
+  generatedTallTreePrefab: {fileID: 831393028907302047, guid: 3619bb1404e39e744aa8613ac0192c37,
+    type: 3}
+  generatedChristmasTreePrefab: {fileID: 9075246515826168797, guid: 61cb535b23244bf4ba68d77f966814f6,
+    type: 3}
+  generatedBushPrefab: {fileID: 6283911050472976555, guid: 825c1f0fac17d6146b0c80b17f1a8375,
+    type: 3}
+  generatedRockPrefab: {fileID: 5342777540094333058, guid: a53b9421207ca5f45bb58fa1289828fa,
+    type: 3}
+  generatedGrassPrefab: {fileID: 8363039824850124542, guid: 324f52fdd91c60448a2e723514e15cb9,
+    type: 3}
+  generatedBranchPrefab: {fileID: 6080900202072463104, guid: 31ddd5c45db188349b207efa99184426,
+    type: 3}
+  generatedLeavesPrefab: {fileID: 1532347098, guid: 06bfe9becbbe78342a730be6d74bf979,
+    type: 3}
+  generatedConeLeavesPrefab: {fileID: 4825453608886995017, guid: f641c32359e0ea9499beaf599b79272c,
+    type: 3}
+  generatedBushFoodPrefab: {fileID: 2995723088229058270, guid: 37c985dde9430ea4ca0e60e56b00ac4f,
+    type: 3}
+  generatedBuildingPrefab: {fileID: 5149956006534636260, guid: ccc8e91442e13c846ac91ec91aa4b04e,
+    type: 3}

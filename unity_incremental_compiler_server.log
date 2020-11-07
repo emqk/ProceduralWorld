@@ -1,0 +1,278 @@
+ (0,0): [04-17-2019 06:04:36.197 ] Unity incremental compiler server
+ (0,0): [04-17-2019 06:04:36.450 ] watchdog active on pid: 4384
+ (0,0): [04-17-2019 06:05:20.020 ] Unity.TextMeshPro.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:20.036 ] Unity.TextMeshPro.dll compiling...
+ (0,0): [04-17-2019 06:05:20.085 ] Unity.Mathematics.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:20.097 ] Unity.Mathematics.dll compiling...
+ (0,0): [04-17-2019 06:05:20.124 ] Unity.Postprocessing.Runtime.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:20.136 ] Unity.Postprocessing.Runtime.dll compiling...
+ (0,0): [04-17-2019 06:05:20.154 ] Unity.Burst.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:20.167 ] Unity.Burst.dll compiling...
+ (0,0): [04-17-2019 06:05:30.476 ] Unity.Burst.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Burst.dll
+ (0,0): [04-17-2019 06:05:30.519 ] Unity.TextMeshPro.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.TextMeshPro.dll
+ (0,0): [04-17-2019 06:05:30.727 ] Unity.Postprocessing.Runtime.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Postprocessing.Runtime.dll
+ (0,0): [04-17-2019 06:05:31.024 ] Unity.Burst.dll compilation finished in 10856ms  source files re-parsed: 5 metadata reloaded: 141
+ (0,0): [04-17-2019 06:05:31.027 ] Unity.TextMeshPro.dll compilation finished in 10990ms  source files re-parsed: 45 metadata reloaded: 188
+ (0,0): [04-17-2019 06:05:31.038 ] Unity.Burst.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:31.039 ] Unity.TextMeshPro.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:31.108 ] Unity.Postprocessing.Runtime.dll compilation finished in 10972ms  source files re-parsed: 56 metadata reloaded: 192
+ (0,0): [04-17-2019 06:05:31.120 ] Unity.Postprocessing.Runtime.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:31.614 ] Unity.Analytics.DataPrivacy.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:31.629 ] Unity.Analytics.DataPrivacy.dll compiling...
+ (0,0): [04-17-2019 06:05:31.717 ] Unity.Analytics.DataPrivacy.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Analytics.DataPrivacy.dll
+ (0,0): [04-17-2019 06:05:31.790 ] Unity.Analytics.DataPrivacy.dll compilation finished in 161ms  source files re-parsed: 3 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:31.804 ] Unity.Analytics.DataPrivacy.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:32.130 ] NavMeshComponents.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:32.142 ] NavMeshComponents.dll compiling...
+ (0,0): [04-17-2019 06:05:32.258 ] Unity.Entities.StaticTypeRegistry.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:32.281 ] Unity.Entities.StaticTypeRegistry.dll compiling...
+ (0,0): [04-17-2019 06:05:32.317 ] NavMeshComponents.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\NavMeshComponents.dll
+ (0,0): [04-17-2019 06:05:32.323 ] Unity.Mathematics.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Mathematics.dll
+ (0,0): [04-17-2019 06:05:32.338 ] Unity.Entities.StaticTypeRegistry.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.StaticTypeRegistry.dll
+ (0,0): [04-17-2019 06:05:32.398 ] Unity.Entities.StaticTypeRegistry.dll compilation finished in 117ms  source files re-parsed: 2 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:32.413 ] Unity.Entities.StaticTypeRegistry.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:32.429 ] Unity.Properties.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:32.435 ] NavMeshComponents.dll compilation finished in 293ms  source files re-parsed: 4 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:32.446 ] Unity.Properties.dll compiling...
+ (0,0): [04-17-2019 06:05:32.447 ] NavMeshComponents.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:32.587 ] Unity.Mathematics.dll compilation finished in 12490ms  source files re-parsed: 85 metadata reloaded: 185
+ (0,0): [04-17-2019 06:05:32.609 ] Unity.Mathematics.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:32.826 ] Unity.Properties.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Properties.dll
+ (0,0): [04-17-2019 06:05:32.930 ] Unity.PackageManagerUI.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:32.944 ] Unity.Properties.dll compilation finished in 498ms  source files re-parsed: 29 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:32.945 ] Unity.PackageManagerUI.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:32.961 ] Unity.Properties.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:33.080 ] NavMeshComponentsEditor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:33.111 ] NavMeshComponentsEditor.dll compiling...
+ (0,0): [04-17-2019 06:05:33.423 ] NavMeshComponentsEditor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\NavMeshComponentsEditor.dll
+ (0,0): [04-17-2019 06:05:33.619 ] Unity.Collections.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:33.645 ] Unity.Collections.dll compiling...
+ (0,0): [04-17-2019 06:05:33.708 ] NavMeshComponentsEditor.dll compilation finished in 597ms  source files re-parsed: 6 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:33.741 ] NavMeshComponentsEditor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:33.764 ] Unity.PackageManagerUI.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.PackageManagerUI.Editor.dll
+ (0,0): [04-17-2019 06:05:33.884 ] Unity.Postprocessing.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:33.972 ] Unity.Postprocessing.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:34.030 ] Unity.Collections.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Collections.dll
+ (0,0): [04-17-2019 06:05:34.070 ] Unity.PackageManagerUI.Editor.dll compilation finished in 1125ms  source files re-parsed: 52 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:34.102 ] Unity.TextMeshPro.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:34.103 ] Unity.PackageManagerUI.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:34.121 ] Unity.TextMeshPro.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:34.235 ] Unity.Collections.dll compilation finished in 590ms  source files re-parsed: 12 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:34.263 ] Unity.Collections.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:34.486 ] Unity.CollabProxy.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:34.658 ] Unity.CollabProxy.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:34.719 ] Unity.Postprocessing.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Postprocessing.Editor.dll
+ (0,0): [04-17-2019 06:05:35.113 ] Unity.Postprocessing.Editor.dll compilation finished in 1140ms  source files re-parsed: 35 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:35.127 ] Unity.TextMeshPro.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.TextMeshPro.Editor.dll
+ (0,0): [04-17-2019 06:05:35.138 ] Unity.Postprocessing.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:35.157 ] Unity.CollabProxy.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.CollabProxy.Editor.dll
+ (0,0): [04-17-2019 06:05:35.155 ] Unity.Entities.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:35.183 ] Unity.Entities.dll compiling...
+ (0,0): [04-17-2019 06:05:35.437 ] Unity.CollabProxy.Editor.dll compilation finished in 779ms  source files re-parsed: 17 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:35.458 ] Unity.CollabProxy.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:35.460 ] Unity.Jobs.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:35.512 ] Unity.Jobs.dll compiling...
+ (0,0): [04-17-2019 06:05:35.577 ] Unity.TextMeshPro.Editor.dll compilation finished in 1455ms  source files re-parsed: 40 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:35.773 ] Unity.TextMeshPro.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:35.835 ] Unity.Burst.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:35.788 ] Unity.Jobs.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Jobs.dll
+ (0,0): [04-17-2019 06:05:35.928 ] Unity.Burst.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:36.531 ] Unity.Jobs.dll compilation finished in 1019ms  source files re-parsed: 3 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:36.576 ] Unity.Properties.Codegen.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:36.604 ] Unity.Properties.Codegen.dll compiling...
+ (0,0): [04-17-2019 06:05:36.642 ] Unity.Jobs.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:37.111 ] Unity.Properties.Codegen.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Properties.Codegen.dll
+ (0,0): [04-17-2019 06:05:37.129 ] Unity.Burst.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Burst.Editor.dll
+ (0,0): [04-17-2019 06:05:37.173 ] Unity.Mathematics.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:37.207 ] Unity.Mathematics.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:37.299 ] Unity.Properties.Codegen.dll compilation finished in 695ms  source files re-parsed: 7 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:37.315 ] Unity.Burst.Editor.dll compilation finished in 1386ms  source files re-parsed: 10 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:37.356 ] Unity.Burst.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:37.356 ] Unity.Properties.Codegen.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:37.380 ] Unity.Mathematics.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Mathematics.Editor.dll
+ (0,0): [04-17-2019 06:05:37.464 ] Unity.Mathematics.Editor.dll compilation finished in 256ms  source files re-parsed: 4 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:37.481 ] Unity.Mathematics.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:37.569 ] Unity.Entities.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.dll
+ (0,0): [04-17-2019 06:05:37.662 ] Unity.Jobs.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:37.675 ] Unity.Jobs.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:37.737 ] Unity.Jobs.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Jobs.Editor.dll
+ (0,0): [04-17-2019 06:05:37.789 ] Unity.Jobs.Editor.dll compilation finished in 114ms  source files re-parsed: 1 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:37.804 ] Unity.Jobs.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:37.816 ] Unity.Entities.dll compilation finished in 2633ms  source files re-parsed: 63 metadata reloaded: 3
+ (0,0): [04-17-2019 06:05:37.830 ] Unity.Entities.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:38.180 ] Unity.Entities.Hybrid.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:38.192 ] Unity.Entities.Hybrid.dll compiling...
+ (0,0): [04-17-2019 06:05:38.282 ] Unity.Transforms.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:38.296 ] Unity.Transforms.dll compiling...
+ (0,0): [04-17-2019 06:05:38.413 ] Unity.Entities.Hybrid.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.Hybrid.dll
+ (0,0): [04-17-2019 06:05:38.547 ] Unity.Transforms.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Transforms.dll
+ (0,0): [04-17-2019 06:05:38.590 ] Unity.Entities.Hybrid.dll compilation finished in 398ms  source files re-parsed: 24 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:38.605 ] Unity.Entities.Hybrid.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:38.646 ] Unity.Transforms.dll compilation finished in 349ms  source files re-parsed: 9 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:38.681 ] Unity.Transforms.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:39.269 ] Unity.Transforms.Hybrid.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:39.282 ] Unity.Transforms.Hybrid.dll compiling...
+ (0,0): [04-17-2019 06:05:39.347 ] Unity.Entities.Properties.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:39.359 ] Unity.Entities.Properties.dll compiling...
+ (0,0): [04-17-2019 06:05:39.362 ] Unity.Transforms.Hybrid.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Transforms.Hybrid.dll
+ (0,0): [04-17-2019 06:05:39.451 ] Unity.Transforms.Hybrid.dll compilation finished in 169ms  source files re-parsed: 14 metadata reloaded: 2
+ (0,0): [04-17-2019 06:05:39.463 ] Unity.Transforms.Hybrid.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:39.569 ] Unity.Entities.Properties.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.Properties.dll
+ (0,0): [04-17-2019 06:05:39.686 ] Unity.Entities.Properties.dll compilation finished in 327ms  source files re-parsed: 14 metadata reloaded: 0
+ (0,0): [04-17-2019 06:05:39.708 ] Unity.Entities.Properties.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:39.912 ] Unity.Rendering.Hybrid.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:39.925 ] Unity.Rendering.Hybrid.dll compiling...
+ (0,0): [04-17-2019 06:05:40.135 ] Unity.Rendering.Hybrid.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Rendering.Hybrid.dll
+ (0,0): [04-17-2019 06:05:40.277 ] Unity.Entities.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:40.281 ] Unity.Rendering.Hybrid.dll compilation finished in 356ms  source files re-parsed: 23 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:40.291 ] Unity.Entities.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:40.295 ] Unity.Rendering.Hybrid.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:40.581 ] Unity.Entities.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.Editor.dll
+ (0,0): [04-17-2019 06:05:40.717 ] Unity.Entities.Editor.dll compilation finished in 426ms  source files re-parsed: 30 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:40.731 ] Unity.Entities.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:40.989 ] Unity.Transforms.Editor.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:41.002 ] Unity.Transforms.Editor.dll compiling...
+ (0,0): [04-17-2019 06:05:41.040 ] Unity.Transforms.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Transforms.Editor.dll
+ (0,0): [04-17-2019 06:05:41.093 ] Unity.Transforms.Editor.dll compilation finished in 90ms  source files re-parsed: 1 metadata reloaded: 1
+ (0,0): [04-17-2019 06:05:41.106 ] Unity.Transforms.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:05:41.348 ] Assembly-CSharp.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:05:41.361 ] Assembly-CSharp.dll compiling...
+ (0,0): [04-17-2019 06:05:41.761 ] Assembly-CSharp.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Assembly-CSharp.dll
+ (0,0): [04-17-2019 06:05:41.920 ] Assembly-CSharp.dll compilation finished in 559ms  source files re-parsed: 35 metadata reloaded: 12
+ (0,0): [04-17-2019 06:05:41.936 ] Assembly-CSharp.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:42.983 ] Unity.Postprocessing.Runtime.dll compiling...
+ (0,0): [04-17-2019 06:08:43.002 ] Unity.Burst.dll compiling...
+ (0,0): [04-17-2019 06:08:43.072 ] Unity.Burst.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Burst.dll
+ (0,0): [04-17-2019 06:08:43.095 ] Unity.TextMeshPro.dll compiling...
+ (0,0): [04-17-2019 06:08:43.512 ] Unity.Mathematics.dll compiling...
+ (0,0): [04-17-2019 06:08:43.880 ] Unity.Postprocessing.Runtime.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Postprocessing.Runtime.dll
+ (0,0): [04-17-2019 06:08:43.966 ] Unity.Burst.dll compilation finished in 963ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:44.081 ] Unity.Burst.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:44.160 ] Unity.Burst.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:44.439 ] Unity.Postprocessing.Runtime.dll compilation finished in 1455ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:44.575 ] Unity.Postprocessing.Runtime.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:44.578 ] Unity.TextMeshPro.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.TextMeshPro.dll
+ (0,0): [04-17-2019 06:08:44.838 ] Unity.Analytics.DataPrivacy.dll compiling...
+ (0,0): [04-17-2019 06:08:44.795 ] Unity.Postprocessing.Runtime.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:45.309 ] Unity.Analytics.DataPrivacy.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Analytics.DataPrivacy.dll
+ (0,0): [04-17-2019 06:08:45.545 ] Unity.TextMeshPro.dll compilation finished in 2450ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:45.571 ] Unity.Analytics.DataPrivacy.dll compilation finished in 733ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:45.576 ] Unity.TextMeshPro.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:45.591 ] NavMeshComponents.dll compiling...
+ (0,0): [04-17-2019 06:08:45.600 ] Unity.TextMeshPro.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:45.591 ] Unity.Analytics.DataPrivacy.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:45.629 ] Unity.Analytics.DataPrivacy.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:45.688 ] NavMeshComponents.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\NavMeshComponents.dll
+ (0,0): [04-17-2019 06:08:45.771 ] NavMeshComponents.dll compilation finished in 179ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:45.784 ] NavMeshComponents.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:45.800 ] NavMeshComponents.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:46.142 ] Unity.Entities.StaticTypeRegistry.dll compiling...
+ (0,0): [04-17-2019 06:08:46.176 ] Unity.Entities.StaticTypeRegistry.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.StaticTypeRegistry.dll
+ (0,0): [04-17-2019 06:08:46.246 ] Unity.Entities.StaticTypeRegistry.dll compilation finished in 104ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:46.265 ] Unity.Entities.StaticTypeRegistry.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:46.279 ] Unity.Entities.StaticTypeRegistry.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:46.466 ] Unity.Properties.dll compiling...
+ (0,0): [04-17-2019 06:08:46.562 ] Unity.PackageManagerUI.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:46.713 ] NavMeshComponentsEditor.dll compiling...
+ (0,0): [04-17-2019 06:08:46.834 ] Unity.Properties.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Properties.dll
+ (0,0): [04-17-2019 06:08:46.891 ] Unity.PackageManagerUI.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.PackageManagerUI.Editor.dll
+ (0,0): [04-17-2019 06:08:46.944 ] NavMeshComponentsEditor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\NavMeshComponentsEditor.dll
+ (0,0): [04-17-2019 06:08:46.984 ] Unity.Properties.dll compilation finished in 518ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:46.997 ] Unity.Properties.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:47.012 ] Unity.Properties.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:47.045 ] NavMeshComponentsEditor.dll compilation finished in 332ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:47.054 ] Unity.PackageManagerUI.Editor.dll compilation finished in 491ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:47.062 ] NavMeshComponentsEditor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:47.087 ] NavMeshComponentsEditor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:47.076 ] Unity.PackageManagerUI.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:47.110 ] Unity.PackageManagerUI.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:47.290 ] Unity.Postprocessing.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:47.487 ] Unity.TextMeshPro.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:47.560 ] Unity.CollabProxy.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:47.693 ] Unity.Postprocessing.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Postprocessing.Editor.dll
+ (0,0): [04-17-2019 06:08:47.766 ] Unity.Mathematics.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Mathematics.dll
+ (0,0): [04-17-2019 06:08:47.830 ] Unity.CollabProxy.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.CollabProxy.Editor.dll
+ (0,0): [04-17-2019 06:08:47.881 ] Unity.TextMeshPro.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.TextMeshPro.Editor.dll
+ (0,0): [04-17-2019 06:08:47.977 ] Unity.CollabProxy.Editor.dll compilation finished in 416ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:47.986 ] Unity.Postprocessing.Editor.dll compilation finished in 695ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:47.992 ] Unity.CollabProxy.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:47.999 ] Unity.Postprocessing.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.005 ] Unity.CollabProxy.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.012 ] Unity.Postprocessing.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.069 ] Unity.Mathematics.dll compilation finished in 4555ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:48.106 ] Unity.Mathematics.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.174 ] Unity.Mathematics.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.310 ] Unity.Burst.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:48.356 ] Unity.TextMeshPro.Editor.dll compilation finished in 868ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:48.401 ] Unity.TextMeshPro.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.483 ] Unity.TextMeshPro.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.514 ] Unity.Burst.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Burst.Editor.dll
+ (0,0): [04-17-2019 06:08:48.586 ] Unity.Properties.Codegen.dll compiling...
+ (0,0): [04-17-2019 06:08:48.701 ] Unity.Burst.Editor.dll compilation finished in 391ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:48.713 ] Unity.Properties.Codegen.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Properties.Codegen.dll
+ (0,0): [04-17-2019 06:08:48.707 ] Unity.Collections.dll compiling...
+ (0,0): [04-17-2019 06:08:48.722 ] Unity.Burst.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.734 ] Unity.Burst.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.842 ] Unity.Mathematics.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:48.867 ] Unity.Properties.Codegen.dll compilation finished in 280ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:48.888 ] Unity.Properties.Codegen.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.889 ] Unity.Collections.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Collections.dll
+ (0,0): [04-17-2019 06:08:48.901 ] Unity.Properties.Codegen.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.901 ] Unity.Mathematics.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Mathematics.Editor.dll
+ (0,0): [04-17-2019 06:08:48.977 ] Unity.Collections.dll compilation finished in 269ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:48.980 ] Unity.Mathematics.Editor.dll compilation finished in 137ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:48.989 ] Unity.Collections.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:48.992 ] Unity.Mathematics.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:49.001 ] Unity.Collections.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:49.004 ] Unity.Mathematics.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:49.321 ] Unity.Entities.dll compiling...
+ (0,0): [04-17-2019 06:08:49.444 ] Unity.Jobs.dll compiling...
+ (0,0): [04-17-2019 06:08:49.912 ] Unity.Jobs.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Jobs.dll
+ (0,0): [04-17-2019 06:08:49.988 ] Unity.Jobs.dll compilation finished in 543ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:50.009 ] Unity.Jobs.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:50.024 ] Unity.Jobs.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:50.459 ] Unity.Jobs.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:50.488 ] Unity.Jobs.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Jobs.Editor.dll
+ (0,0): [04-17-2019 06:08:50.513 ] Unity.Entities.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.dll
+ (0,0): [04-17-2019 06:08:50.536 ] Unity.Jobs.Editor.dll compilation finished in 76ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:50.548 ] Unity.Jobs.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:50.560 ] Unity.Jobs.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:50.681 ] Unity.Entities.dll compilation finished in 1359ms  source files re-parsed: 0 metadata reloaded: 2
+ (0,0): [04-17-2019 06:08:50.694 ] Unity.Entities.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:50.706 ] Unity.Entities.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:50.977 ] Unity.Entities.Hybrid.dll compiling...
+ (0,0): [04-17-2019 06:08:51.088 ] Unity.Transforms.dll compiling...
+ (0,0): [04-17-2019 06:08:51.092 ] Unity.Entities.Hybrid.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.Hybrid.dll
+ (0,0): [04-17-2019 06:08:51.216 ] Unity.Transforms.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Transforms.dll
+ (0,0): [04-17-2019 06:08:51.234 ] Unity.Entities.Hybrid.dll compilation finished in 257ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:51.252 ] Unity.Entities.Hybrid.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:51.264 ] Unity.Entities.Hybrid.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:51.290 ] Unity.Transforms.dll compilation finished in 201ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:51.303 ] Unity.Transforms.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:51.315 ] Unity.Transforms.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:51.681 ] Unity.Transforms.Hybrid.dll compiling...
+ (0,0): [04-17-2019 06:08:51.738 ] Unity.Transforms.Hybrid.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Transforms.Hybrid.dll
+ (0,0): [04-17-2019 06:08:51.781 ] Unity.Entities.Properties.dll compiling...
+ (0,0): [04-17-2019 06:08:51.837 ] Unity.Transforms.Hybrid.dll compilation finished in 156ms  source files re-parsed: 0 metadata reloaded: 2
+ (0,0): [04-17-2019 06:08:51.854 ] Unity.Transforms.Hybrid.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:51.858 ] Unity.Entities.Properties.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.Properties.dll
+ (0,0): [04-17-2019 06:08:51.869 ] Unity.Transforms.Hybrid.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:52.019 ] Unity.Entities.Properties.dll compilation finished in 237ms  source files re-parsed: 0 metadata reloaded: 0
+ (0,0): [04-17-2019 06:08:52.031 ] Unity.Entities.Properties.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:52.044 ] Unity.Entities.Properties.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:52.370 ] Unity.Entities.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:52.504 ] Unity.Entities.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Entities.Editor.dll
+ (0,0): [04-17-2019 06:08:52.643 ] Unity.Entities.Editor.dll compilation finished in 273ms  source files re-parsed: 0 metadata reloaded: 1
+ (0,0): [04-17-2019 06:08:52.655 ] Unity.Entities.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:52.668 ] Unity.Entities.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:52.878 ] Unity.Transforms.Editor.dll compiling...
+ (0,0): [04-17-2019 06:08:52.913 ] Unity.Transforms.Editor.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Unity.Transforms.Editor.dll
+ (0,0): [04-17-2019 06:08:52.957 ] Unity.Transforms.Editor.dll compilation finished in 78ms  source files re-parsed: 0 metadata reloaded: 2
+ (0,0): [04-17-2019 06:08:52.969 ] Unity.Transforms.Editor.dll: compilation was cached, 0 file(s) were found to have changed. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:52.981 ] Unity.Transforms.Editor.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:08:53.217 ] Assembly-CSharp.dll: no prior compilation found in cache. Caller PID: 4384
+ (0,0): [04-17-2019 06:08:53.229 ] Assembly-CSharp.dll compiling...
+ (0,0): [04-17-2019 06:08:53.337 ] Assembly-CSharp.dll: emitting IL to : C:\Users\Ja\Documents\Unity\PC\ProceduralWorld — kopia\Temp\Assembly-CSharp.dll
+ (0,0): [04-17-2019 06:08:53.427 ] Assembly-CSharp.dll compilation finished in 198ms  source files re-parsed: 35 metadata reloaded: 11
+ (0,0): [04-17-2019 06:08:53.440 ] Assembly-CSharp.dll: session status updated to IncrementalCompilationStatus.Finished for Caller PID: 4384
+ (0,0): [04-17-2019 06:09:02.032 ] watchdog triggered an exit
