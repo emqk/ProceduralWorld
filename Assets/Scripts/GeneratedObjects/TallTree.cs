@@ -6,7 +6,7 @@ public class TallTree : Tree
 {
     public override void Generate(int width, int height, Vector3 localScale, float radius, int generateChildsLevels, int branchesAmount, int nestedTreesAmount)
     {
-        Debug.Log("-------------> IN " + branchesAmount);
+       // Debug.Log("-------------> IN " + branchesAmount);
         generatedBranch.Generate(width, height, radius, null);
         generatedBranch.transform.localScale = new Vector3(generatedBranch.transform.localScale.x, generatedBranch.transform.localScale.y * 2, generatedBranch.transform.localScale.z);
         generatedLeaves.Generate();
@@ -35,7 +35,7 @@ public class TallTree : Tree
         generatedBranch.VerySlowlyConvertToFlatShading();
         generatedLeaves.VerySlowlyConvertToFlatShading();
 
-        Debug.Log("Change tree scale(from start)");
+        //Debug.Log("Change tree scale(from start)");
         //transform.localScale *= 0.75f;
         transform.localScale = localScale;
         //Debug.Log("Tree branch verts: " + generatedBranch.GetComponent<MeshFilter>().mesh.vertices.Length + "Tree branch tris: " + generatedBranch.GetComponent<MeshFilter>().mesh.triangles.Length);
@@ -43,8 +43,6 @@ public class TallTree : Tree
 
         StartCoroutine(MergeChildTrees(0.185f, 0.025f));
     }
-
-
 
 
     public static int GetTallTreeBrachesAmount()

@@ -10,7 +10,7 @@ public class Water : MonoBehaviour {
     [SerializeField ]float scale = 5;
 
     int chunkSize;
-    Vector3[] verts;
+    Vector3[] verts = new Vector3[0];
 
     public static Water globalWaterInstance;
 
@@ -24,7 +24,6 @@ public class Water : MonoBehaviour {
     }
 
     void Update() {
-
         //Simulate();
         SimulateJobs();
     }

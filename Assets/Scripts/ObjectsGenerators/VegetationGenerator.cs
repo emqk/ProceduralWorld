@@ -356,7 +356,7 @@ public class VegetationGenerator : MonoBehaviour
         {
             terrainChunkSize = (TerrainGenerator.mapChunkSize * (arScaleMultiplier * TerrainGenerator.instance.transform.parent.localScale.x)) / 2f /* * TerrainGenerator.instance.transform.parent.localScale.x*/;
         }
-        Debug.Log("Terrain chunk size: " + terrainChunkSize);
+        //Debug.Log("Terrain chunk size: " + terrainChunkSize);
 
         Vector3 terrainParentPosition = TerrainGenerator.instance.transform.position;
         float rayPosY = 500;
@@ -386,7 +386,6 @@ public class VegetationGenerator : MonoBehaviour
          maxHeight = maxHeight + terrainParentPosition.y;
 
 
-
         //Debug.Log("Water posY: " + waterPosY);
          if (minHeight < waterPosY)
              minHeight = waterPosY;
@@ -396,24 +395,6 @@ public class VegetationGenerator : MonoBehaviour
 
         Physics.Raycast(randPos, Vector3.down, out hit);
 
-        /*  if (Physics.Raycast(randPos, Vector3.down, out hit))
-          {
-              Debug.Log("Ray good");
-              objToPlace.transform.position = hit.point - transform.up * 0.05f;
-
-          }
-          else
-              Debug.Log("Ray bad");
-
-
-          Debug.Log("Would generate on: " + hit.point);
-
-        Debug.Log("Water posY: " + waterPosY);
-        Debug.Log("Water minHeight: " + minHeight);
-        Debug.Log("Water maxHeight: " + maxHeight);
-        Debug.Log("Global vegeMan pos: " + transform.position);
-        return;
-        */
         while (hit.point.y < waterPosY ||  hit.point.y < minHeight || hit.point.y > maxHeight)
         {
             randPos = terrainParentPosition
@@ -428,7 +409,7 @@ public class VegetationGenerator : MonoBehaviour
         if (TerrainGenerator.instance)
             objToPlace.SetParent(TerrainGenerator.instance.transform.parent);
 
-        Debug.Log("There is no collisions underneath me!");
+       // Debug.Log("There is no collisions underneath me!");
     }
     public void PlaceOnTerrainOnRandomPosInCircle(Transform objToPlace, Vector3 origin, float circleSize, float minHeight = float.MinValue, float maxHeight = float.MaxValue)
     {

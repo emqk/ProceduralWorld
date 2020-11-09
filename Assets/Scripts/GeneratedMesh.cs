@@ -40,7 +40,7 @@ public class GeneratedMesh : MonoBehaviour
 
     public void VerySlowlyConvertToFlatShading()
     {
-        Debug.Log("!Warning! I am really slow, please do something with me !Warning!");
+        //Debug.Log("!Warning! I am really slow, please do something with me !Warning!");
         Vector3[] oldVerts = meshFilter.mesh.vertices;
         int[] triangles = meshFilter.mesh.triangles;
         Vector3[] vertices = new Vector3[triangles.Length];
@@ -72,7 +72,7 @@ public class GeneratedMesh : MonoBehaviour
             //meshFilters[i].gameObject.SetActive(false);
         }
 
-        Debug.Log("CombinedMeshes count: " + combine.Length);
+        //Debug.Log("CombinedMeshes count: " + combine.Length);
 
         GameObject mergedFood = new GameObject("Merged");
         mergedFood.transform.SetParent(parent);
@@ -394,7 +394,7 @@ public class GeneratedMesh : MonoBehaviour
                 startLoopJ = 1;
 
             width /= 2;
-            Debug.Log("GENERATING LOD FROM PARENT MESH");
+            //Debug.Log("GENERATING LOD FROM PARENT MESH");
             int fixedWidth = width + 1;
             int fixedHeight = height + 1;
             Vector3[] nArr = new Vector3[fixedWidth * fixedHeight];
@@ -542,12 +542,14 @@ public class GeneratedMesh : MonoBehaviour
                 tri[ti + 4] = vi + width - vecOffset - 2;
                 tri[ti + 5] = vi + (width / 2 - 1) + vecOffset + 1;
             }
-         //   if ((width / 2 / 2 - 1 - 1 + countFixL) % 2 == 1)
-          //  {
+
+            //Fill last triangle if there is still space for it
+            if (ti + 2 < tri.Length)
+            {
                 tri[ti] = vi + (width / 2 - 1) + vecOffset;
                 tri[ti + 1] = vi - vecOffset - 1 + width;
                 tri[ti + 2] = vi + width - vecOffset - 2;
-            //}
+            }
         }
     }
 
@@ -636,7 +638,7 @@ public class GeneratedMesh : MonoBehaviour
                 startLoopJ = 1;
 
             width /= 2;
-            Debug.Log("GENERATING LOD FROM PARENT MESH");
+            //Debug.Log("GENERATING LOD FROM PARENT MESH");
             int fixedWidth = (parentMesh.vertices.Length-1)/2;
             int fixedCount = fixedWidth + 1;
             Vector3[] nArr = new Vector3[fixedCount/*fixedWidth * height*/];

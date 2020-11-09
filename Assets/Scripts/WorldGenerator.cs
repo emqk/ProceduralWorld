@@ -51,7 +51,7 @@ public class WorldGenerator : MonoBehaviour
         if (isItAR == false)
         {
             generationProgressText.text = "Generating terrain...";
-            Invoke("GenerateWholeWorld", 0.5f);
+            Invoke("GenerateWholeWorld", 0.05f);
         }
         else
         {

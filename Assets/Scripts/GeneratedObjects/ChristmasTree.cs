@@ -10,7 +10,7 @@ public class ChristmasTree : Tree
 
     public override void Generate(int width, int height, Vector3 localScale, float radius, int generateChildsLevels, int branchesAmount, int nestedTreesAmount)
     {
-        Debug.Log("-------------> IN " + branchesAmount);
+        //Debug.Log("-------------> IN " + branchesAmount);
         generatedBranch.Generate(width, 1, radius, null);
         generatedBranch.transform.localScale = new Vector3(generatedBranch.transform.localScale.x, generatedBranch.transform.localScale.y * 2, generatedBranch.transform.localScale.z);
         //generatedLeaves.Generate();

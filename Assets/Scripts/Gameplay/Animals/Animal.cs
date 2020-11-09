@@ -38,7 +38,7 @@ public class Animal : GeneratedAnimal
     {
         if (GetComponent<LODGroup>())
         {
-            Debug.Log("I am i LOD group and my type is: " + animalSettings.animalType);
+           // Debug.Log("I am in LOD group and my type is: " + animalSettings.animalType);
 
             LOD[] lods = new LOD[2];
             Renderer[] renderers = new Renderer[1 + legs.Length];
@@ -88,12 +88,12 @@ public class Animal : GeneratedAnimal
     {
         if (!interactionTarget)
         {
-            Debug.Log("Hello, im looking for tree");
+           // Debug.Log("Hello, im looking for tree");
             SetupNearestTreeAsTarget();
         }
         if (!interactionTarget)
         {
-            Debug.Log("I can't find tree!");
+           // Debug.Log("I can't find tree!");
             return;
         }
 
@@ -120,12 +120,12 @@ public class Animal : GeneratedAnimal
     {
         if (!interactionTarget)
         {
-            Debug.Log("Hello, im looking for bush");
+            //Debug.Log("Hello, im looking for bush");
             SetupNearestBushAsTarget();
         }
         if (!interactionTarget)
         {
-            Debug.Log("I can't find bush with food!");
+            //Debug.Log("I can't find bush with food!");
             return;
         }
 

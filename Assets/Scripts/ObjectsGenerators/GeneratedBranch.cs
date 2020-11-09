@@ -17,7 +17,7 @@ public class GeneratedBranch : GeneratedMesh
         GameObject go = Instantiate(VegetationGenerator.instance.generatedBranchPrefab.gameObject, parent);
         go.name = "Overrided LOD";
 
-        Debug.Log("I have to handle LOD_Level! parent ");
+        //Debug.Log("I have to handle LOD_Level! parent ");
 
         go.transform.localPosition = target.transform.position;
         go.transform.localScale = target.transform.localScale;
