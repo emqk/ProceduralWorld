@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.UIElements;
+using UnityEngine;
 
 public class NormalTree : Tree
 {
@@ -42,12 +43,12 @@ public class NormalTree : Tree
         StartCoroutine(MergeChildTrees(0.1f, 0.025f));
     }
 
-    public static int GetDefaultTreeBrachesAmount()
+    public static Vector2Int GetDefaultTreeBrachesAmount()
     {
-        return Random.Range(0, 6);
+        return new Vector2Int(0, 6);
     }
-    public static int GetDefaultTreeNestedTreesAmount()
+    public static Vector2Int GetDefaultTreeNestedTreesAmount()
     {
-        return Random.Range(0, 4);
+        return new Vector2Int(0, 4);
     }
 }

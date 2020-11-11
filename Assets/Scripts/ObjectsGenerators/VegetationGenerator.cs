@@ -74,7 +74,13 @@ public class VegetationGenerator : MonoBehaviour
     {
         for (int i = 0; i < NewWorldData.countDictionary[TerrainSettingType.NormalTree]; i++)
         {
-            SpawnTree(true);
+            NormalTreeGenerationData treeGenData = new NormalTreeGenerationData {
+                  widthRange = defaultTreeWidthFromTo
+                , heightRange = defaultTreeHeightFromTo
+                , childLevels = 1
+                , branchesAmountRange = NormalTree.GetDefaultTreeBrachesAmount()
+                , nestedTreeAmountRange = NormalTree.GetDefaultTreeNestedTreesAmount() };
+            SpawnTree(treeGenData, true);
         }
         for (int i = 0; i < NewWorldData.countDictionary[TerrainSettingType.TallTree]; i++)
         {
@@ -158,17 +164,17 @@ public class VegetationGenerator : MonoBehaviour
         return group;
     }
 
-    public GameObject SpawnTree(bool findGround)
+    public GameObject SpawnTree(NormalTreeGenerationData treeGenData, bool findGround)
     {
         GameObject instance = Instantiate(generatedNormalTreePrefab);
         instance.GetComponent<NormalTree>().Generate(
-            Random.Range(defaultTreeWidthFromTo.x, defaultTreeWidthFromTo.y)
-            , Random.Range(defaultTreeHeightFromTo.x, defaultTreeHeightFromTo.y)
+            Random.Range(treeGenData.widthRange.x, treeGenData.widthRange.y)
+            , Random.Range(treeGenData.heightRange.x, treeGenData.heightRange.y)
             , new Vector3(0.75f, 0.75f, 0.75f)
             , defaultTreeRadius
-            , 1
-            , NormalTree.GetDefaultTreeBrachesAmount()
-            , NormalTree.GetDefaultTreeNestedTreesAmount());
+            , treeGenData.childLevels
+            , Random.Range(treeGenData.branchesAmountRange.x, treeGenData.branchesAmountRange.y)
+            , Random.Range(treeGenData.nestedTreeAmountRange.x, treeGenData.nestedTreeAmountRange.y));
 
         trees.Add(instance.GetComponent<Tree>());
 

@@ -113,7 +113,7 @@ public class Tree : MonoBehaviour
 
         List<Tree> treesToMerge = new List<Tree>();
 
-        if (!transform.parent.GetComponent<Tree>())
+        if (transform.parent && !transform.parent.GetComponent<Tree>())
         {
             treesToMerge.Add(this);
             for (int i = 0; i < transform.childCount; i++)

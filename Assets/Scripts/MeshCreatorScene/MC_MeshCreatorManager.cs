@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Data.SqlTypes;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MC_MeshCreatorManager : MonoBehaviour
@@ -57,7 +58,7 @@ public class MC_MeshCreatorManager : MonoBehaviour
         switch (treeType)
         {
             case ObjType.NormalTree:
-                return VegetationGenerator.instance.SpawnTree(false);
+                return VegetationGenerator.instance.SpawnTree(MC_SettingsPanel.instance.normalTreeGenData, false);
             case ObjType.TallTree:
                 return VegetationGenerator.instance.SpawnTallTree(false);
             case ObjType.ChristmasTree:
