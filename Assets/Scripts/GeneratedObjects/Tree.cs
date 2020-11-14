@@ -26,7 +26,7 @@ public class Tree : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void Generate(int width, int height, Vector3 localScale, float radius, int generateChildsLevels, int branchesAmount, int nestedTreesAmount)
+    public virtual void Generate(int width, int height, Vector3 localScale, float radius, float segmentHeight, int generateChildsLevels, int branchesAmount, int nestedTreesAmount)
     {
         Debug.LogError("Generating tree from empty virtual function!");
     }
@@ -194,9 +194,9 @@ public class Tree : MonoBehaviour
     protected void AddBranches()
     {
         GameObject instance = Instantiate(VegetationGenerator.instance.generatedBranchPrefab.gameObject, transform);
-        instance.GetComponent<GeneratedBranch>().Generate(Random.Range(5, 9), Random.Range(1, 6), 1f, null);
+        instance.GetComponent<GeneratedBranch>().Generate(Random.Range(5, 9), Random.Range(1, 6), 1f, 1, null);
         instance.transform.parent = transform;
-        instance.transform.localPosition = new Vector3(0, Random.Range(2.5f, generatedBranch.transform.localScale.y * generatedBranch.meshHeight * 0.95f), 0);
+        instance.transform.localPosition = new Vector3(0, Random.Range(2.5f, generatedBranch.transform.localScale.y * generatedBranch.meshHeight * generatedBranch.mySegmentHeight * 0.95f), 0);
         instance.transform.localScale = new Vector3(Random.Range(0.25f, 0.35f), Random.Range(0.3f, 0.6f)*2f, Random.Range(0.25f, 0.35f));
         instance.transform.localRotation = Quaternion.Euler(new Vector3(Random.Range(35, 65) ,Random.Range(0, 360), 0));
         instance.GetComponent<GeneratedBranch>().VerySlowlyConvertToFlatShading();
@@ -206,11 +206,13 @@ public class Tree : MonoBehaviour
     protected void AddBranchesTrees(GameObject treePrefab, int _generateChildLevel, int branchesAmount, int nestedTreesAmount)
     {
         GameObject instance = Instantiate(treePrefab, transform);
-        instance.GetComponent<Tree>().Generate(Random.Range(defaultSubtreeWidthFromTo.x, defaultSubtreeWidthFromTo.y), Random.Range(defaultSubtreeTreeHeightFromTo.x, defaultSubtreeTreeHeightFromTo.y), transform.localScale, 1f, _generateChildLevel, branchesAmount, nestedTreesAmount);
+        instance.GetComponent<Tree>().Generate(Random.Range(defaultSubtreeWidthFromTo.x, defaultSubtreeWidthFromTo.y)
+            , Random.Range(defaultSubtreeTreeHeightFromTo.x, defaultSubtreeTreeHeightFromTo.y)
+            , transform.localScale, 1f, 1, _generateChildLevel, branchesAmount, nestedTreesAmount);
 
         instance.transform.parent = transform;
         float fixedHeight = generatedBranch.transform.localScale.y * generatedBranch.meshHeight;
-        instance.transform.localPosition = new Vector3(0, Random.Range(fixedHeight * 0.2f, fixedHeight * 0.6f), 0);
+        instance.transform.localPosition = new Vector3(0, Random.Range(fixedHeight * 0.2f, fixedHeight * 0.6f) * generatedBranch.mySegmentHeight, 0);
         float randScale = Random.Range(defaultSubtreeScaleFromTo.x, defaultSubtreeScaleFromTo.y);
         instance.transform.localScale = new Vector3(randScale, randScale * transform.localScale.y, randScale);
         instance.transform.localRotation = Quaternion.Euler(new Vector3(Random.Range(30, 45), Random.Range(0, 360), 0));
@@ -218,13 +220,13 @@ public class Tree : MonoBehaviour
 
     protected void AdjustTreeLeaves()
     {
-        generatedLeaves.transform.localPosition = new Vector3(0f, (generatedBranch.meshHeight + generatedLeaves.transform.localScale.y/2f) * generatedBranch.transform.localScale.y, 0f);
+        generatedLeaves.transform.localPosition = new Vector3(
+              0f
+            , generatedBranch.mySegmentHeight * generatedBranch.meshHeight * generatedBranch.transform.localScale.y + generatedLeaves.transform.localScale.y / 2f
+            , 0f);
         float height = (generatedBranch.meshHeight * generatedBranch.transform.parent.localScale.y) * 0.5f;
         generatedLeaves.transform.localScale = new Vector3(3f + Random.Range(0f, height), 3f + Random.Range(0f, height), 3f + Random.Range(0f, height));
     }
-
-
-
 
 
     private void OnDestroy()

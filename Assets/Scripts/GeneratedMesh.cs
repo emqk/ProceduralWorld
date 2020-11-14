@@ -379,14 +379,14 @@ public class GeneratedMesh : MonoBehaviour
     #endregion
 
     #region Cylinder
-    protected void GenerateCylinder(int width, int height, float radius, Mesh parentMesh, float thinMultiplierMin = 0.85f, float thinMultiplierMax = 0.97f)
+    protected void GenerateCylinder(int width, int height, float radius, float segmentHeight, Mesh parentMesh, float thinMultiplierMin = 0.85f, float thinMultiplierMax = 0.97f)
     {
         //width = 18;
         //height = 5;
         int startLoopJ = 0;
         if (parentMesh == null)
         {
-            GenerateCylinderMeshVertsByJobs(width, height, radius, thinMultiplierMin, thinMultiplierMax);
+            GenerateCylinderMeshVertsByJobs(width, height, radius, segmentHeight, thinMultiplierMin, thinMultiplierMax);
         }
         else
         {
@@ -553,7 +553,7 @@ public class GeneratedMesh : MonoBehaviour
         }
     }
 
-    void GenerateCylinderMeshVertsByJobs(int width, int height, float radius, float thinMultiplierMin, float thinMultiplierMax)
+    void GenerateCylinderMeshVertsByJobs(int width, int height, float radius, float segmentHeight, float thinMultiplierMin, float thinMultiplierMax)
     {
         int fixedWidth = width + 1;
         int fixedHeight = height + 1;
@@ -575,12 +575,13 @@ public class GeneratedMesh : MonoBehaviour
             randomHeights = randHeights,
             curves = randCurves,
             radius = radius,
+            segmentHeight = segmentHeight,
             seed = Random.Range(-100000, 100000),
             vertices = vertsNative,
         };
-
-           var jobHandle = job.Schedule(vertsNative.Length, 25);
-           jobHandle.Complete();
+        
+        var jobHandle = job.Schedule(vertsNative.Length, 25);
+        jobHandle.Complete();
 
         //vertsNative.CopyTo(verts);
         meshFilter.mesh.vertices = vertsNative.ToArray();
@@ -601,6 +602,8 @@ public class GeneratedMesh : MonoBehaviour
         [ReadOnly]
         public float radius;
         [ReadOnly]
+        public float segmentHeight;
+        [ReadOnly]
         public float seed;
         [WriteOnly]
         public NativeArray<Vector3> vertices;
@@ -616,7 +619,7 @@ public class GeneratedMesh : MonoBehaviour
             Unity.Mathematics.float2 fz = new Unity.Mathematics.float2 { x = posX*index + seed / 1f + seed, y = posZ * index + seed / 1f };
             float posZOffset = Unity.Mathematics.noise.cnoise(fz) * 0.33f;
 
-            vertices[index] = new Vector3(posX + posZOffset, posY, posZ + posZOffset) + curves[posY];
+            vertices[index] = new Vector3(posX + posZOffset, posY * segmentHeight, posZ + posZOffset) + curves[posY];
         }
     }
 

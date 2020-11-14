@@ -20,7 +20,7 @@ public class GeneratedGrass : MonoBehaviour
         int count = generatedBranches.Length;
         for (int i = 0; i < count; i++)
         {
-            generatedBranches[i].Generate(4, 3, 1, null, 0.75f ,0.85f);
+            generatedBranches[i].Generate(4, 3, 1, 1, null, 0.75f ,0.85f);
             generatedBranches[i].VerySlowlyConvertToFlatShading();
             generatedBranches[i].transform.localScale = Vector3.Scale(transform.localScale, new Vector3(0.1f, 0.225f, 0.1f));
             generatedBranches[i].transform.position += new Vector3(Random.Range(0.1f, grassBrachRandomOffset), 0, Random.Range(0.1f, grassBrachRandomOffset));

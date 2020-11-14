@@ -19,7 +19,7 @@ public class BindPoseExample : MonoBehaviour
         obj.AddComponent<MeshFilter>();
         obj.AddComponent<MeshRenderer>();
         obj.AddComponent<GeneratedBranch>();
-        obj.GetComponent<GeneratedBranch>().Generate(10, 7, 1, null);
+        obj.GetComponent<GeneratedBranch>().Generate(10, 7, 1, 1, null);
         obj.GetComponent<MeshFilter>().mesh.RecalculateNormals();
 
         // Build basic mesh

@@ -34,7 +34,7 @@ public class GeneratedAnimal : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             legs[i] = Instantiate(AnimalsManager.instance.animalLegPrefab, transform).GetComponent<GeneratedBranch>();
-            legs[i].Generate(6, 2, 1, null);
+            legs[i].Generate(6, 2, 1, 1, null);
            // legs[i].VerySlowlyConvertToFlatShading();
         }
 

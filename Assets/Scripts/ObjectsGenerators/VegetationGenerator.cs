@@ -172,6 +172,7 @@ public class VegetationGenerator : MonoBehaviour
             , Random.Range(treeGenData.heightRange.x, treeGenData.heightRange.y)
             , new Vector3(0.75f, 0.75f, 0.75f)
             , treeGenData.radius
+            , treeGenData.segmentHeight
             , treeGenData.childLevels
             , Random.Range(treeGenData.branchesAmountRange.x, treeGenData.branchesAmountRange.y)
             , Random.Range(treeGenData.nestedTreeAmountRange.x, treeGenData.nestedTreeAmountRange.y));
@@ -195,6 +196,7 @@ public class VegetationGenerator : MonoBehaviour
             , new Vector3(1, 1.25f, 1)
             , defaultTreeRadius * 1.25f
             , 1
+            , 2
             , TallTree.GetTallTreeBrachesAmount()
             , TallTree.GetTallTreeNestedTreesAmount());
 
@@ -214,6 +216,7 @@ public class VegetationGenerator : MonoBehaviour
             , Random.Range(defaultChristmasTreeLeavesHeightFromTo.x, defaultChristmasTreeLeavesHeightFromTo.y)
             , new Vector3(1, 1, 1)
             , defaultTreeRadius
+            , 1
             , 1
             , 0
             , 0);

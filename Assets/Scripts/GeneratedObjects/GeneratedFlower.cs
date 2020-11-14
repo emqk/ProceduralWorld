@@ -19,7 +19,7 @@ public class GeneratedFlower : MonoBehaviour
 
     void GenerateBranch()
     {
-        generatedBranch.Generate(4, 1, 1, null, 0.5f, 0.65f);
+        generatedBranch.Generate(4, 1, 1, 1, null, 0.5f, 0.65f);
         generatedBranch.VerySlowlyConvertToFlatShading();
         generatedBranch.transform.localScale = Vector3.Scale(transform.localScale, new Vector3(0.05f, 0.4f, 0.05f));
     }
