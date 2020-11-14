@@ -171,7 +171,7 @@ public class VegetationGenerator : MonoBehaviour
             Random.Range(treeGenData.widthRange.x, treeGenData.widthRange.y)
             , Random.Range(treeGenData.heightRange.x, treeGenData.heightRange.y)
             , new Vector3(0.75f, 0.75f, 0.75f)
-            , defaultTreeRadius
+            , treeGenData.radius
             , treeGenData.childLevels
             , Random.Range(treeGenData.branchesAmountRange.x, treeGenData.branchesAmountRange.y)
             , Random.Range(treeGenData.nestedTreeAmountRange.x, treeGenData.nestedTreeAmountRange.y));
