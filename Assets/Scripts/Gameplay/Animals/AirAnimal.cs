@@ -24,8 +24,8 @@ public class AirAnimal : Animal
 
     void SkyMovement()
     {
-        float distXZ = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(targetPos.x, targetPos.z));
-        if (distXZ > interactionDistance)
+        float distXZSq = (new Vector2(transform.position.x, transform.position.z) - new Vector2(targetPos.x, targetPos.z)).sqrMagnitude;
+        if (distXZSq > interactionDistance * interactionDistance)
         {
             targY = flyHeight;
         }

@@ -151,7 +151,7 @@ public class VegetationGenerator : MonoBehaviour
 
             for (int j = 0; j < grasses.Count; j++)
             {
-                float currDist = Vector3.Distance(startGrass.transform.position, grasses[j].transform.position);
+                float currDist = (startGrass.transform.position - grasses[j].transform.position).sqrMagnitude;
                 if (currDist < closestDist)
                 {
                     closestDist = currDist;
@@ -319,7 +319,7 @@ public class VegetationGenerator : MonoBehaviour
         float nearestBushDistance = float.MaxValue;
         for (int i = 0; i < count; i++)
         {
-            float dist = Vector3.Distance(pos, bushes[i].transform.position);
+            float dist = (pos - bushes[i].transform.position).sqrMagnitude;
             if (dist < nearestBushDistance)
             {
                 if (bushes[i].HaveFood() && !bushes[i].GetComponent<InteractionTarget>().IsSomeoneInteracting())
@@ -341,7 +341,7 @@ public class VegetationGenerator : MonoBehaviour
         float nearestTreeDistance = float.MaxValue;
         for (int i = 0; i < count; i++)
         {
-            float dist = Vector3.Distance(pos, trees[i].transform.position);
+            float dist = (pos - trees[i].transform.position).sqrMagnitude;
             if (dist < nearestTreeDistance)
             {
                 if (!trees[i].GetComponent<InteractionTarget>().IsSomeoneInteracting())

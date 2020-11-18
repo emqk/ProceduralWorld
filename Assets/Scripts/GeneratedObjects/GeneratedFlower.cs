@@ -6,7 +6,6 @@ public class GeneratedFlower : MonoBehaviour
     public GeneratedLeaves generatedLeaves;
 
     public GameObject mergedMesh;
-    float grassBrachRandomOffset = 0.55f;
 
     void Start()
     {

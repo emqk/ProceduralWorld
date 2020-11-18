@@ -79,8 +79,8 @@ public class Animal : GeneratedAnimal
 
     protected void ControlMovementAnimations()
     {
-        float distToTarget = Vector3.Distance(transform.position, targetPos);
-        if (distToTarget > interactionDistance)
+        float distToTargetSq = (transform.position - targetPos).sqrMagnitude;
+        if (distToTargetSq > interactionDistance * interactionDistance)
             PlayMovementAnimation();
     }
 
@@ -98,8 +98,8 @@ public class Animal : GeneratedAnimal
             return false;
         }
 
-        float distToTarget = Vector3.Distance(transform.position, targetPos);
-        if (distToTarget <= 3f)
+        float distToTarget = (transform.position - targetPos).sqrMagnitude;
+        if (distToTarget <= 8f)
         {
             interactionTarget.GetComponent<Tree>().TakeWood(ref animalCarrying);
             interactionTarget.RemoveAnimal(this);
@@ -132,8 +132,8 @@ public class Animal : GeneratedAnimal
             return;
         }
 
-        float distToTarget = Vector3.Distance(transform.position, targetPos);
-        if (distToTarget <= 3f)
+        float distToTarget = (transform.position - targetPos).sqrMagnitude;
+        if (distToTarget <= 8f)
         {
             interactionTarget.GetComponent<Bush>().TakeFood(ref animalCarrying);
             interactionTarget.RemoveAnimal(this);
@@ -157,11 +157,10 @@ public class Animal : GeneratedAnimal
         else
             targetPos = nest.transform.position;
 
-        float distToTarget = Vector3.Distance(transform.position, targetPos);
-        if (distToTarget <= 3f)
+        float distToTarget = (transform.position - targetPos).sqrMagnitude;
+        if (distToTarget <= 8f)
         {
             nest.ChangeWoodAmount(animalCarrying.carryingAmount);
-            //nest.ChangeFoodAmount(carryingAmount);
 
             interactionTarget = null;
             animalCarrying.FinishCarrying();
