@@ -9,6 +9,7 @@ public class Bush : MonoBehaviour
     void Start()
     {
         generatedLeaves.Generate(defaultRecursionLevel);
+        generatedLeaves.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.7f, 1.0f), Random.Range(0.0f, 0.35f));
 
         GenerateFood();
         AdjustBushLeaves();

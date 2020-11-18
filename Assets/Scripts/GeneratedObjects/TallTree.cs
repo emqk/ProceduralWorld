@@ -10,6 +10,7 @@ public class TallTree : Tree
         generatedBranch.Generate(width, height, radius, segmentHeight, null);
         generatedBranch.transform.localScale = new Vector3(generatedBranch.transform.localScale.x, generatedBranch.transform.localScale.y * 2, generatedBranch.transform.localScale.z);
         generatedLeaves.Generate();
+        generatedLeaves.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.7f, 1.0f), Random.Range(0.0f, 0.35f));
 
         AdjustTreeLeaves();
 
@@ -18,7 +19,7 @@ public class TallTree : Tree
             generateChildsLevels--;
             for (int i = 0; i < nestedTreesAmount; i++)
             {
-                AddBranchesTrees(VegetationGenerator.instance.generatedTallTreePrefab, generateChildsLevels, branchesAmount, nestedTreesAmount);
+                Tree branchTree = AddBranchesTrees(VegetationGenerator.instance.generatedTallTreePrefab, generateChildsLevels, branchesAmount, nestedTreesAmount);
             }
         }
         else

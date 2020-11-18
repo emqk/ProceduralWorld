@@ -2,12 +2,12 @@
 
 public class GeneratedLeaves : GeneratedMesh
 {
-  /*  void Awake()
-    {
-        Setup();
-        GenerateIcoSphere();
-        VerySlowlyConvertToFlatShading();
-    }*/
+    /*  void Awake()
+      {
+          Setup();
+          GenerateIcoSphere();
+          VerySlowlyConvertToFlatShading();
+      }*/
 
     public void Generate(int recursionLevel = 2)
     {
@@ -24,6 +24,8 @@ public class GeneratedLeaves : GeneratedMesh
         go.transform.position = target.transform.position;
         go.transform.localScale = target.transform.localScale;
         go.GetComponent<GeneratedLeaves>().Generate(recursion_Level);
+        if(target.GetComponent<Renderer>())
+            go.GetComponent<GeneratedLeaves>().GetComponent<Renderer>().material.color = target.GetComponent<Renderer>().material.color;
 
         return go;
     }

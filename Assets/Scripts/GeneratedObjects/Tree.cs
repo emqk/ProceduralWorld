@@ -8,7 +8,7 @@ public class Tree : MonoBehaviour
     protected GeneratedBranch generatedBranch;
     protected GeneratedBranch generatedBranchLOD;
     [SerializeField]
-    protected GeneratedLeaves generatedLeaves;
+    public GeneratedLeaves generatedLeaves;
     protected GeneratedLeaves generatedLeavesLOD;
     [SerializeField]
     protected Transform generatedBranchesParent;
@@ -46,6 +46,7 @@ public class Tree : MonoBehaviour
             Renderer[] renderers2 = new Renderer[2];
             renderers2[0] = CreateLODFromMesh(generatedBranch.gameObject, 1).GetComponent<Renderer>();
             renderers2[1] = CreateLODFromMesh(generatedLeaves.gameObject, 1).GetComponent<Renderer>();
+            renderers2[1].material.color = generatedLeaves.GetComponent<Renderer>().material.color;
 
             lods[0] = new LOD(/*0.22f*/LOD0_Distance, renderers);
             lods[1] = new LOD(/*0.025f*/LOD1_Distance, renderers2);
@@ -203,7 +204,7 @@ public class Tree : MonoBehaviour
 
         instance.transform.SetParent(generatedBranchesParent);
     }
-    protected void AddBranchesTrees(GameObject treePrefab, int _generateChildLevel, int branchesAmount, int nestedTreesAmount)
+    protected Tree AddBranchesTrees(GameObject treePrefab, int _generateChildLevel, int branchesAmount, int nestedTreesAmount)
     {
         GameObject instance = Instantiate(treePrefab, transform);
         instance.GetComponent<Tree>().Generate(Random.Range(defaultSubtreeWidthFromTo.x, defaultSubtreeWidthFromTo.y)
@@ -216,6 +217,8 @@ public class Tree : MonoBehaviour
         float randScale = Random.Range(defaultSubtreeScaleFromTo.x, defaultSubtreeScaleFromTo.y);
         instance.transform.localScale = new Vector3(randScale, randScale * transform.localScale.y, randScale);
         instance.transform.localRotation = Quaternion.Euler(new Vector3(Random.Range(30, 45), Random.Range(0, 360), 0));
+
+        return instance.GetComponent<Tree>();
     }
 
     protected void AdjustTreeLeaves()

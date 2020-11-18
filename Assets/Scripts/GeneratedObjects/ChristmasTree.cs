@@ -38,6 +38,7 @@ public class ChristmasTree : Tree
         firstLeaves.transform.localScale *= startScale;
         startScale = 1 * 0.8f;
         generatedLeavesLOD0[0] = firstLeaves;
+        firstLeaves.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.7f, 1.0f), Random.Range(0.0f, 0.35f));
 
         //leaves1 = firstLeaves.gameObject;
 
@@ -53,6 +54,7 @@ public class ChristmasTree : Tree
             newLeaves.transform.localRotation = Quaternion.Euler(new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)));
             startScale *= 0.9f;
             generatedLeavesLOD0[i] = newLeaves;
+            newLeaves.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.7f, 1.0f), Random.Range(0.0f, 0.35f));
         }
 
         //Creating leaves for LOD1
@@ -65,7 +67,7 @@ public class ChristmasTree : Tree
             generatedLeavesLOD1[i].transform.parent = generatedLeavesLOD1[i - 1].transform;
             generatedLeavesLOD1[i].transform.localScale = generatedLeavesLOD0[i].transform.localScale;
             generatedLeavesLOD1[i].transform.localRotation = generatedLeavesLOD0[i].transform.localRotation;
-
+            generatedLeavesLOD1[i].GetComponent<Renderer>().material.color = generatedLeavesLOD0[i].GetComponent<Renderer>().material.color;
         }
 
         //Making each leave flat-shaded
