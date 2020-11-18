@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using UnityEngine;
-using UnityEditor.Formats.Fbx.Exporter;
+//using UnityEditor.Formats.Fbx.Exporter;
 
 public static class MeshExporter
 {
@@ -10,10 +10,10 @@ public static class MeshExporter
 
 
         //Its working. Disable for build
-        path = "Exported/" + path + ".fbx";
-        string filePath = Path.Combine(Application.dataPath, path);
-        ModelExporter.ExportObjects(filePath, objects);
-        Debug.Log("Exported to: " + Application.dataPath + path);
+        //path = "Exported/" + path + ".fbx";
+        //string filePath = Path.Combine(Application.dataPath, path);
+        //ModelExporter.ExportObjects(filePath, objects);
+        //Debug.Log("Exported to: " + Application.dataPath + path);
         
 
 
