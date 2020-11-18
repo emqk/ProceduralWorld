@@ -84,17 +84,18 @@ public class Animal : GeneratedAnimal
             PlayMovementAnimation();
     }
 
-    protected void MoveToTree()
+    protected bool MoveToTree()
     {
         if (!interactionTarget)
         {
            // Debug.Log("Hello, im looking for tree");
             SetupNearestTreeAsTarget();
+            return true;
         }
         if (!interactionTarget)
         {
-           // Debug.Log("I can't find tree!");
-            return;
+            // Debug.Log("I can't find tree!");
+            return false;
         }
 
         float distToTarget = Vector3.Distance(transform.position, targetPos);
@@ -103,6 +104,8 @@ public class Animal : GeneratedAnimal
             interactionTarget.GetComponent<Tree>().TakeWood(ref animalCarrying);
             interactionTarget.RemoveAnimal(this);
         }
+
+        return false;
     }
     void SetupNearestTreeAsTarget()
     {
@@ -147,7 +150,7 @@ public class Animal : GeneratedAnimal
         targetPos = interactionTarget.transform.position;
     }
 
-    protected void MoveToNest()
+    protected bool MoveToNest()
     {
         if (nest.mainBuilding)
             targetPos = nest.mainBuilding.entrance.position;
@@ -163,6 +166,8 @@ public class Animal : GeneratedAnimal
             interactionTarget = null;
             animalCarrying.FinishCarrying();
         }
+
+        return false;
     }
 
     void PlayMovementAnimation()

@@ -16,21 +16,17 @@ public class LandAnimal : Animal
     {
         if (animalCarrying.isCarrying)
         {
+            Vector3 currTargetPos = targetPos;
             MoveToNest();
+            if(currTargetPos != targetPos)
+                agent.SetDestination(targetPos);
         }
         else
         {
-            MoveToTree();
-            //MoveToBush();
+            if(MoveToTree())
+                agent.SetDestination(targetPos);
         }
 
-        LandMovement();
         ControlMovementAnimations();
-    }
-
-
-    void LandMovement()
-    {
-        agent.SetDestination(targetPos);
     }
 }
