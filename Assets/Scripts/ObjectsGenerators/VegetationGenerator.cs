@@ -77,6 +77,8 @@ public class VegetationGenerator : MonoBehaviour
             NormalTreeGenerationData treeGenData = new NormalTreeGenerationData {
                   widthRange = defaultTreeWidthFromTo
                 , heightRange = defaultTreeHeightFromTo
+                , radius = 1
+                , segmentHeight = 1
                 , childLevels = 1
                 , branchesAmountRange = NormalTree.GetDefaultTreeBrachesAmount()
                 , nestedTreeAmountRange = NormalTree.GetDefaultTreeNestedTreesAmount() };
