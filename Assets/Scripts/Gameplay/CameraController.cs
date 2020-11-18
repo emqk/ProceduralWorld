@@ -47,8 +47,8 @@ public class CameraController : MonoBehaviour
     {
         if (!useMobileInput)
         {
-            mouseX += Input.GetAxis("Mouse X");
-            mouseY += Input.GetAxis("Mouse Y");      
+            mouseX += Input.GetAxis("Mouse X") * lookSpeed * Time.deltaTime;
+            mouseY += Input.GetAxis("Mouse Y") * lookSpeed * Time.deltaTime;      
         }
 
         transform.rotation = Quaternion.Euler(new Vector3(mouseY, mouseX, 0));

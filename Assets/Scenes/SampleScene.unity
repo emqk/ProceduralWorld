@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 534669908}
   - component: {fileID: 534669909}
   m_Layer: 8
-  m_Name: Main Camera
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 50
-  lookSpeed: 50
+  lookSpeed: 125
   mobileControllerParent: {fileID: 1716624980}
 --- !u!1 &735675292
 GameObject:
