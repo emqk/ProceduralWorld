@@ -27,7 +27,7 @@ public class GeneratedGrass : MonoBehaviour
             generatedBranches[i].GetComponent<Renderer>().material.color = new Color(Random.Range(0.18f, 0.5f), Random.Range(0.5f, 1.0f), Random.Range(0.0f, 0.30f));
         }
 
-        transform.localScale *= 1.5f;
+        transform.localScale *= Random.Range(1.25f, 1.75f);
     }
     void AddLODs()
     {
