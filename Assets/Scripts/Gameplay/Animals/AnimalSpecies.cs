@@ -111,7 +111,11 @@ public class AnimalSpecies : MonoBehaviour
         }
 
         GameObject newAnimal = Instantiate(animalPrefabToSpawn.gameObject);
-        newAnimal.transform.position = transform.position;
+        NavMeshAgent animalAgent = newAnimal.GetComponent<NavMeshAgent>();
+        if(animalAgent)
+            animalAgent.Warp(transform.position);
+        else
+            newAnimal.transform.position = transform.position;
         newAnimal.transform.SetParent(TerrainGenerator.instance.transform.parent);
         Animal animal = newAnimal.GetComponent<Animal>();
         animal.FirstGeneration(animalSettings);

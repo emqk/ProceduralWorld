@@ -178,8 +178,8 @@ public class Animal : GeneratedAnimal
             legs[i].transform.localEulerAngles = new Vector3(-Mathf.PingPong(Time.time * 30, 20), legs[i].transform.localEulerAngles.y, legs[i].transform.localEulerAngles.z);
         }
 
-        float height = 0.25f;
-        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + Mathf.PingPong(Time.time * 0.75f, height) - height / 2f, transform.localPosition.z);
+       //const float height = 0.25f;
+        //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + Mathf.PingPong(Time.time * 0.75f, height), transform.localPosition.z);
     }
 
     private void OnDestroy()

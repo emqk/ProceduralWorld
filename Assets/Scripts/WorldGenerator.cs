@@ -115,6 +115,7 @@ public class WorldGenerator : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
         NavMeshManager.instance.BuildNavMesh();
+        yield return new WaitForEndOfFrame();
         AnimalsManager.instance.Generate();
 
         yield return new WaitForEndOfFrame();
