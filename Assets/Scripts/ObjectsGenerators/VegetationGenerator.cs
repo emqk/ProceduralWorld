@@ -16,9 +16,6 @@ public class VegetationGenerator : MonoBehaviour
     public GeneratedLeaves generatedLeavesPrefab;
     public GeneratedCone generatedConeLeavesPrefab;
 
-    public Material flowerRedMat;
-    public Material flowerYellowMat;
-
     public GeneratedLeaves generatedBushFoodPrefab;
     List<Bush> bushes = new List<Bush>();
     List<Tree> trees = new List<Tree>();
@@ -294,7 +291,7 @@ public class VegetationGenerator : MonoBehaviour
         LOD[] lods = new LOD[1];
         Renderer[] renderers = new Renderer[1];
         renderers[0] = mergedMesh.transform.GetChild(0).GetComponent<Renderer>();       
-        lods[0] = new LOD(0.175f, renderers);
+        lods[0] = new LOD(0.07f, renderers);
 
         mergedMesh.GetComponent<LODGroup>().SetLODs(lods);
         mergedMesh.GetComponent<LODGroup>().RecalculateBounds();      

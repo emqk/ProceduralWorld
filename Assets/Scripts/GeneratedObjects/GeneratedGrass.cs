@@ -25,6 +25,8 @@ public class GeneratedGrass : MonoBehaviour
             generatedBranches[i].transform.localScale = Vector3.Scale(transform.localScale, new Vector3(0.1f, 0.225f, 0.1f));
             generatedBranches[i].transform.position += new Vector3(Random.Range(0.1f, grassBrachRandomOffset), 0, Random.Range(0.1f, grassBrachRandomOffset));
         }
+
+        transform.localScale *= 1.5f;
     }
     void AddLODs()
     {

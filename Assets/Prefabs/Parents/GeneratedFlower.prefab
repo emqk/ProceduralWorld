@@ -72,8 +72,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generatedBranch: {fileID: 4024872257994796602}
   generatedLeaves: {fileID: 47571162250394266}
-  redMat: {fileID: 2100000, guid: 0652fa02278ac1f46a7b1c5c444698ec, type: 2}
-  yellowMat: {fileID: 2100000, guid: b296004d8ed672e42b62649607214a82, type: 2}
   mergedMesh: {fileID: 0}
 --- !u!1 &4024872257994796601
 GameObject:
@@ -130,6 +128,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -141,6 +140,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -168,6 +168,7 @@ MonoBehaviour:
   currentMeshType: 0
   meshWidth: 0
   meshHeight: 0
+  mySegmentHeight: 1
 --- !u!1 &8610258016587479705
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,10 +224,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0652fa02278ac1f46a7b1c5c444698ec, type: 2}
+  - {fileID: 2100000, guid: b296004d8ed672e42b62649607214a82, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -234,6 +236,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

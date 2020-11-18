@@ -13,32 +13,25 @@ public class GeneratedFlower : MonoBehaviour
 
         GenerateLeaves();
         //MergeGrass();
-        //AddLODs();
+        AddLODs();
     }
 
     void GenerateBranch()
     {
-        generatedBranch.Generate(4, 1, 1, 1, null, 0.5f, 0.65f);
+        generatedBranch.Generate(4, 2, 2.2f, 1.25f, null, 0.75f, 0.85f);
         generatedBranch.VerySlowlyConvertToFlatShading();
         generatedBranch.transform.localScale = Vector3.Scale(transform.localScale, new Vector3(0.05f, 0.4f, 0.05f));
     }
 
     void GenerateLeaves()
     {
-        int randInt = Random.Range(0, 100);
-        if (randInt <= 49)
-        {
-            generatedLeaves.GetComponent<Renderer>().material = VegetationGenerator.instance.flowerRedMat;
-        }
-        else
-        {
-            generatedLeaves.GetComponent<Renderer>().material = VegetationGenerator.instance.flowerYellowMat;
-        }
+        generatedLeaves.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
 
         generatedLeaves.Generate(0);
         generatedLeaves.VerySlowlyConvertToFlatShading();
-        generatedLeaves.transform.localPosition = Vector3.Scale(transform.localScale, new Vector3(0, 0.5f, 0));
-        generatedLeaves.transform.localScale = Vector3.Scale(transform.localScale, new Vector3(0.1f, 0.175f, 0.1f));
+        
+        generatedLeaves.transform.localPosition = new Vector3(0, generatedBranch.mySegmentHeight * generatedBranch.meshHeight * 0.4f, 0);
+        generatedLeaves.transform.localScale = Vector3.Scale(transform.localScale, new Vector3(0.2f, 0.275f, 0.2f));
     }
 
     void AddLODs()
@@ -46,10 +39,11 @@ public class GeneratedFlower : MonoBehaviour
         if (GetComponent<LODGroup>())
         {
             LOD[] lods = new LOD[1];
-            Renderer[] renderers = new Renderer[1];
-            renderers[0] = mergedMesh.GetComponent<Renderer>();
+            Renderer[] renderers = new Renderer[2];
+            renderers[0] = generatedBranch.GetComponent<Renderer>();
+            renderers[1] = generatedLeaves.GetComponent<Renderer>();
 
-            lods[0] = new LOD(0.0045f, renderers);
+            lods[0] = new LOD(0.015f, renderers);
 
             GetComponent<LODGroup>().SetLODs(lods);
             GetComponent<LODGroup>().RecalculateBounds();
