@@ -8,6 +8,7 @@ public class NormalTree : Tree
         generatedBranch.Generate(width, height, radius, segmentHeight, null);
         generatedBranch.transform.localScale = new Vector3(generatedBranch.transform.localScale.x, generatedBranch.transform.localScale.y * 2, generatedBranch.transform.localScale.z);
         generatedLeaves.Generate();
+        generatedBranch.GetComponent<Renderer>().material.color = new Color(Random.Range(0.4f, 0.65f), Random.Range(0.284f, 0.35f), Random.Range(0.0f, 0.26f));
         generatedLeaves.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.7f, 1.0f), Random.Range(0.0f, 0.35f));
 
         AdjustTreeLeaves();
@@ -45,10 +46,10 @@ public class NormalTree : Tree
 
     public static Vector2Int GetDefaultTreeBrachesAmount()
     {
-        return new Vector2Int(0, 6);
+        return new Vector2Int(0, 3);
     }
     public static Vector2Int GetDefaultTreeNestedTreesAmount()
     {
-        return new Vector2Int(0, 4);
+        return new Vector2Int(0, 3);
     }
 }

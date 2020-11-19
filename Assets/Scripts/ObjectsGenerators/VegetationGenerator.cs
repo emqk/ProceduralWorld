@@ -24,7 +24,7 @@ public class VegetationGenerator : MonoBehaviour
     public Building generatedBuildingPrefab;
 
     Vector2Int defaultTreeWidthFromTo = new Vector2Int(13, 18/*17, 24*/);
-    Vector2Int defaultTreeHeightFromTo = new Vector2Int(3, 6);
+    Vector2Int defaultTreeHeightFromTo = new Vector2Int(3, 4);
     Vector2Int defaultChristmasTreeWidthFromTo = new Vector2Int(6, 10);
     Vector2Int defaultChristmasTreeLeavesHeightFromTo = new Vector2Int(3, 5);
     readonly float defaultTreeRadius = 1;
@@ -74,8 +74,8 @@ public class VegetationGenerator : MonoBehaviour
             NormalTreeGenerationData treeGenData = new NormalTreeGenerationData {
                   widthRange = defaultTreeWidthFromTo
                 , heightRange = defaultTreeHeightFromTo
-                , radius = 1
-                , segmentHeight = 1
+                , radius = Random.Range(1.0f, 1.5f)
+                , segmentHeight = 1.6f
                 , childLevels = 1
                 , branchesAmountRange = NormalTree.GetDefaultTreeBrachesAmount()
                 , nestedTreeAmountRange = NormalTree.GetDefaultTreeNestedTreesAmount() };
@@ -187,15 +187,15 @@ public class VegetationGenerator : MonoBehaviour
     public GameObject SpawnTallTree(bool findGround)
     {
         GameObject instance = Instantiate(generatedTallTreePrefab);
-        int nestedTreesAmount = Random.Range(1, 5);
-        int branchesAmount = Random.Range(0, 6);
+        //int nestedTreesAmount = Random.Range(1, 5);
+        //int branchesAmount = Random.Range(3, 3);
         instance.GetComponent<TallTree>().Generate(
             Random.Range(defaultTreeWidthFromTo.x, defaultTreeWidthFromTo.y)
             , Random.Range(defaultTreeHeightFromTo.x * 2, defaultTreeHeightFromTo.y * 2)
             , new Vector3(1, 1.25f, 1)
-            , defaultTreeRadius * 1.25f
+            , defaultTreeRadius * Random.Range(1.25f, 2.0f)
             , 1
-            , 2
+            , 1
             , TallTree.GetTallTreeBrachesAmount()
             , TallTree.GetTallTreeNestedTreesAmount());
 

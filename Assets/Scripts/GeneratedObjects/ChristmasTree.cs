@@ -13,6 +13,7 @@ public class ChristmasTree : Tree
         //Debug.Log("-------------> IN " + branchesAmount);
         generatedBranch.Generate(width, 1, radius, segmentHeight, null);
         generatedBranch.transform.localScale = new Vector3(generatedBranch.transform.localScale.x, generatedBranch.transform.localScale.y * 2, generatedBranch.transform.localScale.z);
+        generatedBranch.GetComponent<Renderer>().material.color = new Color(Random.Range(0.4f, 0.65f), Random.Range(0.284f, 0.35f), Random.Range(0.0f, 0.26f));
         //generatedLeaves.Generate();
 
         CreateLeaves(width, height);

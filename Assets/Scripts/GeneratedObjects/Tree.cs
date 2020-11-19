@@ -46,6 +46,7 @@ public class Tree : MonoBehaviour
             Renderer[] renderers2 = new Renderer[2];
             renderers2[0] = CreateLODFromMesh(generatedBranch.gameObject, 1).GetComponent<Renderer>();
             renderers2[1] = CreateLODFromMesh(generatedLeaves.gameObject, 1).GetComponent<Renderer>();
+            renderers2[0].material.color = generatedBranch.GetComponent<Renderer>().material.color;
             renderers2[1].material.color = generatedLeaves.GetComponent<Renderer>().material.color;
 
             lods[0] = new LOD(/*0.22f*/LOD0_Distance, renderers);
