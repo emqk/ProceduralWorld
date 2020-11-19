@@ -25,6 +25,7 @@ public class VegetationGenerator : MonoBehaviour
 
     Vector2Int defaultTreeWidthFromTo = new Vector2Int(13, 18/*17, 24*/);
     Vector2Int defaultTreeHeightFromTo = new Vector2Int(3, 4);
+    Vector2Int tallTreeHeightFromTo = new Vector2Int(5, 7);
     Vector2Int defaultChristmasTreeWidthFromTo = new Vector2Int(6, 10);
     Vector2Int defaultChristmasTreeLeavesHeightFromTo = new Vector2Int(3, 5);
     readonly float defaultTreeRadius = 1;
@@ -191,10 +192,10 @@ public class VegetationGenerator : MonoBehaviour
         //int branchesAmount = Random.Range(3, 3);
         instance.GetComponent<TallTree>().Generate(
             Random.Range(defaultTreeWidthFromTo.x, defaultTreeWidthFromTo.y)
-            , Random.Range(defaultTreeHeightFromTo.x * 2, defaultTreeHeightFromTo.y * 2)
+            , Random.Range(tallTreeHeightFromTo.x, tallTreeHeightFromTo.y)
             , new Vector3(1, 1.25f, 1)
             , defaultTreeRadius * Random.Range(1.25f, 2.0f)
-            , 1
+            , Random.Range(1.0f, 1.4f)
             , 1
             , TallTree.GetTallTreeBrachesAmount()
             , TallTree.GetTallTreeNestedTreesAmount());

@@ -49,7 +49,7 @@ public class TallTree : Tree
 
     public static int GetTallTreeBrachesAmount()
     {
-        return Random.Range(0, 3);
+        return Random.Range(1, 4);
     }
     public static int GetTallTreeNestedTreesAmount()
     {

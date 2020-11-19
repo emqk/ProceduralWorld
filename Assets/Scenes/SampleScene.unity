@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda56c059b8a8ca4ea2d0e657eaf31e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 50
+  movementSpeed: 40
   lookSpeed: 125
   mobileControllerParent: {fileID: 1716624980}
 --- !u!1 &735675292

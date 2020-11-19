@@ -196,9 +196,11 @@ public class Tree : MonoBehaviour
     protected void AddBranches()
     {
         GameObject instance = Instantiate(VegetationGenerator.instance.generatedBranchPrefab.gameObject, transform);
-        instance.GetComponent<GeneratedBranch>().Generate(Random.Range(5, 9), Random.Range(1, 6), 1f, 1, null);
+        instance.GetComponent<GeneratedBranch>().Generate(Random.Range(5, 9), Random.Range(2, 4), Random.Range(1.0f, 1.5f), Random.Range(1.33f, 1.38f), null);
         instance.transform.parent = transform;
-        instance.transform.localPosition = new Vector3(0, Random.Range(2.5f, generatedBranch.transform.localScale.y * generatedBranch.meshHeight * generatedBranch.mySegmentHeight * 0.95f), 0);
+        instance.transform.localPosition
+            = new Vector3(0, Random.Range(generatedBranch.transform.localScale.y * generatedBranch.meshHeight * generatedBranch.mySegmentHeight * 0.2f
+                                        , generatedBranch.transform.localScale.y * generatedBranch.meshHeight * generatedBranch.mySegmentHeight * 0.6f), 0);
         instance.transform.localScale = new Vector3(Random.Range(0.25f, 0.35f), Random.Range(0.3f, 0.6f)*2f, Random.Range(0.25f, 0.35f));
         instance.transform.localRotation = Quaternion.Euler(new Vector3(Random.Range(35, 65) ,Random.Range(0, 360), 0));
         instance.GetComponent<GeneratedBranch>().VerySlowlyConvertToFlatShading();
