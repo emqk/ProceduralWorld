@@ -141,21 +141,6 @@ public class WorldGenerator : MonoBehaviour
             currentWorldGenerationProgress = WorldGenerationProgress.Done;
     }
 
-    void OnGUI()
-    {
-        int w = Screen.width, h = Screen.height-200;
-
-        GUIStyle style = new GUIStyle();
-
-        Rect rect = new Rect(0, 100, w, h * 2 / 100);
-        style.alignment = TextAnchor.UpperLeft;
-        style.fontSize = 25;
-        style.normal.textColor = new Color(1.0f, 0.0f, 0.0f, 1.0f);
-        string text = currentWorldGenerationProgress.ToString();
-        GUI.Label(rect, text, style);
-    }
-
-
     public static void ChangeObjectScaleToAR(Transform targetTrans)
     {
         //Debug.Log("Ar parent: " + GetArParent());
