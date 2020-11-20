@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.AI;
 
 public class VegetationGenerator : MonoBehaviour
 {
@@ -244,7 +245,7 @@ public class VegetationGenerator : MonoBehaviour
     {
         GameObject instance = Instantiate(generatedRockPrefab.gameObject);
 
-        if(findGround)
+        if (findGround)
             PlaceOnTerrainOnRandomPos(instance.transform, 0, 10.5f);
 
         return instance;
@@ -262,7 +263,7 @@ public class VegetationGenerator : MonoBehaviour
     {
         GameObject instance = Instantiate(generatedGrassPrefab.gameObject);
 
-        if(findGround)
+        if (findGround)
             PlaceOnTerrainOnRandomPos(instance.transform);
 
         grasses.Add(instance);
@@ -355,24 +356,27 @@ public class VegetationGenerator : MonoBehaviour
             return null;
     }
 
-
     public void PlaceOnTerrainOnRandomPos(Transform objToPlace, float minHeight = float.MinValue, float maxHeight = float.MaxValue)
     {
-        float arScaleMultiplier = WorldGenerator.GetIsItAR() ? 482 : 1;
+        //float arScaleMultiplier = WorldGenerator.GetIsItAR() ? 482 : 1;
+        float arScaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
 
-        float terrainChunkSize = TerrainGenerator.mapChunkSize / 2f * TerrainGenerator.instance.transform.parent.localScale.x;
+        float terrainChunkSize = TerrainGenerator.mapChunkSize * TerrainGenerator.instance.transform.parent.localScale.x;
         if (WorldGenerator.GetIsItAR()) // is AR
         {
-            terrainChunkSize = (TerrainGenerator.mapChunkSize * (arScaleMultiplier * TerrainGenerator.instance.transform.parent.localScale.x)) / 2f /* * TerrainGenerator.instance.transform.parent.localScale.x*/;
+            terrainChunkSize = TerrainGenerator.mapChunkSize * arScaleMultiplier;
         }
         //Debug.Log("Terrain chunk size: " + terrainChunkSize);
 
         Vector3 terrainParentPosition = TerrainGenerator.instance.transform.position;
         float rayPosY = 500;
+        if (WorldGenerator.GetIsItAR())
+            rayPosY = WorldGenerator.worldGenerator.transform.position.y + 100;
 
-        Vector3 randPos = terrainParentPosition + new Vector3(Random.Range(-terrainChunkSize * terrainMeshScale.x + 0.5f, terrainChunkSize * terrainMeshScale.x - 0.5f)
+        Vector3 randPos = terrainParentPosition +
+            new Vector3(Random.Range(-terrainChunkSize, terrainChunkSize)
                         , rayPosY
-                        , Random.Range(-terrainChunkSize * terrainMeshScale.z + 0.5f, terrainChunkSize * terrainMeshScale.z - 0.5f));
+                        , Random.Range(-terrainChunkSize, terrainChunkSize));
 
         //Scale fix on axis y
         //randPos = new Vector3(randPos.x, randPos.y/2, randPos.z);
@@ -384,7 +388,7 @@ public class VegetationGenerator : MonoBehaviour
 
         RaycastHit hit = new RaycastHit();
         float waterPosY = 0;
-        if(Water.globalWaterInstance)
+        if (Water.globalWaterInstance)
             waterPosY = Water.globalWaterInstance.transform.position.y/* + terrainParentPosition.y*/;
 
         float fixedTerrainParentScaleY = TerrainGenerator.instance.transform.parent.localScale.y * arScaleMultiplier;
@@ -392,33 +396,48 @@ public class VegetationGenerator : MonoBehaviour
         maxHeight *= fixedTerrainParentScaleY;
 
         minHeight = minHeight + terrainParentPosition.y;
-         maxHeight = maxHeight + terrainParentPosition.y;
+        maxHeight = maxHeight + terrainParentPosition.y;
 
 
         //Debug.Log("Water posY: " + waterPosY);
-         if (minHeight < waterPosY)
-             minHeight = waterPosY;
-         if (maxHeight < waterPosY)
-             maxHeight = waterPosY + 2;
+        if (minHeight < waterPosY)
+            minHeight = waterPosY;
+        if (maxHeight < waterPosY)
+            maxHeight = waterPosY + 2 * WorldGenerator.worldGenerator.GetScaleMultiplier();
 
+        waterPosY *= WorldGenerator.worldGenerator.GetScaleMultiplier();
 
-        Physics.Raycast(randPos, Vector3.down, out hit);
+        //while (!Physics.Raycast(randPos, Vector3.down, out hit) && hit.point.y < waterPosY || hit.point.y < minHeight || hit.point.y > maxHeight)
+        //{
+        //    randPos = terrainParentPosition
+        //                            + new Vector3(Random.Range(-terrainChunkSize, terrainChunkSize)
+        //                            , rayPosY
+        //                            , Random.Range(-terrainChunkSize, terrainChunkSize));
+        //}
 
-        while (hit.point.y < waterPosY ||  hit.point.y < minHeight || hit.point.y > maxHeight)
+        while (!Physics.Raycast(randPos, Vector3.down, out hit) || !hit.collider || hit.collider.tag != "Terrain"
+            || hit.point.y < minHeight || hit.point.y > maxHeight)
         {
             randPos = terrainParentPosition
-                                    + new Vector3(Random.Range(-terrainChunkSize * terrainMeshScale.x + 0.5f, terrainChunkSize * terrainMeshScale.x - 0.5f)
+                                    + new Vector3(Random.Range(-terrainChunkSize, terrainChunkSize)
                                     , rayPosY
-                                    , Random.Range(-terrainChunkSize * terrainMeshScale.z + 0.5f, terrainChunkSize * terrainMeshScale.z - 0.5f));
-            Physics.Raycast(randPos, Vector3.down, out hit);
+                                    , Random.Range(-terrainChunkSize, terrainChunkSize));
         }
 
-        objToPlace.transform.position = hit.point - transform.up * 0.05f;
+        //while (hit.point.y < waterPosY ||  hit.point.y < minHeight || hit.point.y > maxHeight)
+        //{
+        //    randPos = terrainParentPosition
+        //                            + new Vector3(Random.Range(-terrainChunkSize * terrainMeshScale.x + 0.5f, terrainChunkSize * terrainMeshScale.x - 0.5f)
+        //                            , rayPosY
+        //                            , Random.Range(-terrainChunkSize * terrainMeshScale.z + 0.5f, terrainChunkSize * terrainMeshScale.z - 0.5f));
+        //    Physics.Raycast(randPos, Vector3.down, out hit);
+        //}
+
+        objToPlace.transform.position = hit.point - transform.up * 0.05f * arScaleMultiplier;
         objToPlace.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+        objToPlace.transform.localScale *= arScaleMultiplier;
         if (TerrainGenerator.instance)
             objToPlace.SetParent(TerrainGenerator.instance.transform.parent);
-
-       // Debug.Log("There is no collisions underneath me!");
     }
     public void PlaceOnTerrainOnRandomPosInCircle(Transform objToPlace, Vector3 origin, float circleSize, float minHeight = float.MinValue, float maxHeight = float.MaxValue)
     {
@@ -467,8 +486,8 @@ public class VegetationGenerator : MonoBehaviour
         Vector3[] values = new Vector3[pointsCount];
         for (int i = 0; i < pointsCount; i++)
         {
-            float x = Mathf.Sin(Mathf.PI * (i * (2f / pointsCount))) * range;
-            float y = Mathf.Cos(Mathf.PI * (i * (2f / pointsCount))) * range;
+            float x = Mathf.Sin(Mathf.PI * (i * (2f / pointsCount))) * range * WorldGenerator.worldGenerator.GetScaleMultiplier();
+            float y = Mathf.Cos(Mathf.PI * (i * (2f / pointsCount))) * range * WorldGenerator.worldGenerator.GetScaleMultiplier();
             values[i] = new Vector3(x, 0, y) + source;
         }
 

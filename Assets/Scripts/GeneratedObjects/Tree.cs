@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 
 public class Tree : MonoBehaviour
 {
@@ -17,6 +18,16 @@ public class Tree : MonoBehaviour
     Vector2Int defaultSubtreeTreeHeightFromTo = new Vector2Int(4, 7);
     Vector2 defaultSubtreeScaleFromTo = new Vector2(0.4f, 0.6f);
 
+
+    private void Start()
+    {
+        if (WorldGenerator.GetIsItAR())
+        {
+            NavMeshObstacle obstacle = GetComponent<NavMeshObstacle>();
+            if (obstacle)
+            Destroy(obstacle);
+        }
+    }
 
     public void TakeWood(ref AnimalCarrying animalCarrying)
     {

@@ -25,6 +25,7 @@ public class Animal : GeneratedAnimal
 
     protected InteractionTarget interactionTarget;
     protected const float interactionDistance = 2f;
+    protected float distToCollect = 8f;
     protected Vector3 targetPos = new Vector3(0, 0, 0);
 
     public void FirstGeneration(AnimalSettings _animalSettings)
@@ -133,7 +134,7 @@ public class Animal : GeneratedAnimal
         }
 
         float distToTarget = (transform.position - targetPos).sqrMagnitude;
-        if (distToTarget <= 8f)
+        if (distToTarget <= distToCollect)
         {
             interactionTarget.GetComponent<Bush>().TakeFood(ref animalCarrying);
             interactionTarget.RemoveAnimal(this);
@@ -158,7 +159,7 @@ public class Animal : GeneratedAnimal
             targetPos = nest.transform.position;
 
         float distToTarget = (transform.position - targetPos).sqrMagnitude;
-        if (distToTarget <= 8f)
+        if (distToTarget <= distToCollect)
         {
             nest.ChangeWoodAmount(animalCarrying.carryingAmount);
 

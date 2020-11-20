@@ -145,9 +145,6 @@ public class MobileJoystick : MonoBehaviour
             moveDirection.x = moveTouch.mainButton.rectTransform.position.x - moveTouch.defaultArea.x;
             moveDirection.y = moveTouch.mainButton.rectTransform.position.y - moveTouch.defaultArea.y;
 
-            Debug.Log("Bef MoveDirX: " + moveDirection.x);
-            Debug.Log("Bef MoveDirY: " + moveDirection.y);
-
             /*if (Mathf.Abs(moveDirection.x) < 19)
             {
                 moveDirection.x = 0;
@@ -171,9 +168,6 @@ public class MobileJoystick : MonoBehaviour
             moveTouch.mainButton.rectTransform.position = new Vector3(moveTouch.defaultArea.x, moveTouch.defaultArea.y);
             moveDirection = Vector2.zero;
         }
-
-        Debug.Log("MoveDirX: " + moveDirection.x);
-        Debug.Log("MoveDirY: " + moveDirection.y);
     }
 
     //Here we check if the clicked/tapped position is inside the joystick button

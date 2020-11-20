@@ -10,6 +10,7 @@ public class LandAnimal : Animal
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.speed *= WorldGenerator.worldGenerator.GetScaleMultiplier();
     }
 
     void Update()

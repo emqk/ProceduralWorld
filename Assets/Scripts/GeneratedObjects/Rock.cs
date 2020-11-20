@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class Rock : MonoBehaviour
 {
@@ -7,6 +8,13 @@ public class Rock : MonoBehaviour
 
     void Start()
     {
+        if (WorldGenerator.GetIsItAR())
+        {
+            NavMeshObstacle obstacle = GetComponent<NavMeshObstacle>();
+            if (obstacle)
+                Destroy(obstacle);
+        }
+
         generatedLeaves.Generate(defaultRecursionLevel);
         Adjust();
 

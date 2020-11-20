@@ -27,6 +27,7 @@ public class CameraSelector : MonoBehaviour
 
     void Update()
     {
+        
         RefreshSelector();
 
        // if (wasSpawned == false)
@@ -109,13 +110,13 @@ public class CameraSelector : MonoBehaviour
         if (planeManager)
         {
             planeManager.enabled = false;
-        }      
+        }
         ARPlane[] ArPlanes = GameObject.FindObjectsOfType<ARPlane>();
         foreach (var currPlane in ArPlanes)
         {
             Destroy(currPlane.gameObject);
         }
-          
+
         //Clear point cloud
         ARPointCloudManager pointCloudManager = GameObject.FindObjectOfType<ARPointCloudManager>();
         if (pointCloudManager)
@@ -126,7 +127,7 @@ public class CameraSelector : MonoBehaviour
                 Destroy(point.gameObject);
             }
         }
-    }
+}
 
     #region UI
 
@@ -134,7 +135,8 @@ public class CameraSelector : MonoBehaviour
     {
         GameObject instance = Instantiate(prefab, currPrototype.transform.position, currPrototype.transform.rotation);
         Vector3 targetScale = currPrototype.transform.localScale/* / 500f*/; /* / 500 because then terrain mesh scale is qual to 1x1x1 */
-        WorldGenerator.worldGenerator.GenerateWorldWithScale(targetScale);
+        instance.transform.localScale *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        //WorldGenerator.worldGenerator.GenerateWorldWithScale(targetScale);
 
         currCrosshair = Instantiate(selectorCrosshair, new Vector3(0, -3, 0), Quaternion.Euler(0, 0, 0));
         wasSpawned = true;

@@ -1,11 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AirAnimal : Animal
 {
     float targY;
-    const float flyHeight = 30;
+    float flyHeight = 30;
+    float flyHorizontalSpeed = 5;
+    float flyVerticalSpeed = 5;
+
+    private void Start()
+    {
+        flyHeight *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        flyHorizontalSpeed *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        flyVerticalSpeed *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+    }
 
     void Update()
     {
@@ -33,7 +40,7 @@ public class AirAnimal : Animal
         {
             targY = targetPos.y;
         }
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(targetPos.x, transform.position.y, targetPos.z), Time.deltaTime * 5);
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, targY, transform.position.z), Time.deltaTime * 8);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(targetPos.x, transform.position.y, targetPos.z), Time.deltaTime * flyHorizontalSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, targY, transform.position.z), Time.deltaTime * flyVerticalSpeed);
     }
 }

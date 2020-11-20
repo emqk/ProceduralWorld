@@ -23,7 +23,11 @@ public class GeneratedGrass : MonoBehaviour
             generatedBranches[i].Generate(4, 3, 1, 1, null, 0.75f ,0.85f);
             generatedBranches[i].VerySlowlyConvertToFlatShading();
             generatedBranches[i].transform.localScale = Vector3.Scale(transform.localScale, new Vector3(0.1f, 0.225f, 0.1f));
-            generatedBranches[i].transform.position += new Vector3(Random.Range(0.1f, grassBrachRandomOffset), 0, Random.Range(0.1f, grassBrachRandomOffset));
+            generatedBranches[i].transform.position
+                += new Vector3(
+                  Random.Range(0.1f, grassBrachRandomOffset) * WorldGenerator.worldGenerator.GetScaleMultiplier()
+                , 0
+                , Random.Range(0.1f, grassBrachRandomOffset) * WorldGenerator.worldGenerator.GetScaleMultiplier());
             generatedBranches[i].GetComponent<Renderer>().material.color = new Color(Random.Range(0.18f, 0.5f), Random.Range(0.5f, 1.0f), Random.Range(0.0f, 0.30f));
         }
 

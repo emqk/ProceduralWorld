@@ -55,6 +55,8 @@ MonoBehaviour:
     type: 3}
   generatedGrassPrefab: {fileID: 8363039824850124542, guid: 324f52fdd91c60448a2e723514e15cb9,
     type: 3}
+  generatedFlowerPrefab: {fileID: 4024872257259562960, guid: 977142bea3b3e7b429ba07baf17b5559,
+    type: 3}
   generatedBranchPrefab: {fileID: 6080900202072463104, guid: 31ddd5c45db188349b207efa99184426,
     type: 3}
   generatedLeavesPrefab: {fileID: 1532347098, guid: 06bfe9becbbe78342a730be6d74bf979,

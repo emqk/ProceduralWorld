@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AR_Root
+  - Terrain
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - Terrain
   - 
   - 
   - 

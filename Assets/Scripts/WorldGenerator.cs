@@ -39,6 +39,11 @@ public class WorldGenerator : MonoBehaviour
         else
             return arParent = arRoot.transform;
     }
+    public float GetScaleMultiplier()
+    {
+        return GetIsItAR() ? 0.01f : 1;
+    }
+
     public static bool GetIsItAR()
     {
         return worldGenerator.isItAR;
@@ -48,15 +53,24 @@ public class WorldGenerator : MonoBehaviour
     {
         GetArParent();
 
-        if (isItAR == false)
+        if (isItAR)
         {
-            generationProgressText.text = "Generating terrain...";
-            Invoke("GenerateWholeWorld", 0.05f);
+            //transform.parent.SetParent(GameObject.FindGameObjectWithTag("AR_Root").transform);
         }
         else
-        {
-            transform.parent.SetParent(GameObject.FindGameObjectWithTag("AR_Root").transform);
-        }
+            generationProgressText.text = "Generating terrain...";
+
+        Invoke("GenerateWholeWorld", 0.05f);
+
+        //if (isItAR == false)
+        //{
+        //    generationProgressText.text = "Generating terrain...";
+        //    Invoke("GenerateWholeWorld", 0.05f);
+        //}
+        //else
+        //{
+        //    transform.parent.SetParent(GameObject.FindGameObjectWithTag("AR_Root").transform);
+        //}
     }
 
     public void GenerateWorldWithScale(Vector3 targetScale)
@@ -64,7 +78,7 @@ public class WorldGenerator : MonoBehaviour
         ChangeObjectScaleAR(transform.parent, targetScale);
 
         currentWorldGenerationProgress = WorldGenerationProgress.Terrain;
-        StartCoroutine(ChangeTerrainParentScale(targetScale));
+       // StartCoroutine(ChangeTerrainParentScale(targetScale));
     }
     private IEnumerator ChangeTerrainParentScale(Vector3 targetScale)
     {
@@ -74,6 +88,7 @@ public class WorldGenerator : MonoBehaviour
         yield return new WaitForEndOfFrame();
         WaterGenerator.instance.GenerateWater();
         currentWorldGenerationProgress = WorldGenerationProgress.Vegetation;
+
         yield return new WaitForEndOfFrame();
         StartCoroutine(GenerateVegetationAfterDelay());
         yield return new WaitForEndOfFrame();
@@ -82,7 +97,7 @@ public class WorldGenerator : MonoBehaviour
 
         //transform.parent.localScale = targetScale;
         yield return new WaitForEndOfFrame();
-        NavMeshManager.instance.BuildNavMesh();
+        //NavMeshManager.instance.BuildNavMesh();
     }
 
     void GenerateWholeWorld()
@@ -95,22 +110,21 @@ public class WorldGenerator : MonoBehaviour
 
     private IEnumerator GenerateVegetationAfterDelay()
     {
-        if(isItAR == false)
-            generationProgressText.text = "Generating Vegetation...";
-        else
+       // if(isItAR == false)
+          //  generationProgressText.text = "Generating Vegetation...";
+
             currentWorldGenerationProgress = WorldGenerationProgress.Vegetation;
 
         yield return new WaitForEndOfFrame();
         VegetationGenerator.instance.GenerateSomeRandomVegetation();
-
-            StartCoroutine(GenerateNavMeshAfterDelay());
+        StartCoroutine(GenerateNavMeshAfterDelay());
     }
 
     private IEnumerator GenerateNavMeshAfterDelay()
     {
-        if(isItAR == false)
-            generationProgressText.text = "Generating AI...";
-        else
+       // if(isItAR == false)
+         //   generationProgressText.text = "Generating AI...";
+
             currentWorldGenerationProgress = WorldGenerationProgress.AI;
 
         yield return new WaitForEndOfFrame();
@@ -123,7 +137,7 @@ public class WorldGenerator : MonoBehaviour
 
         if (isItAR == false)
             generationPanel.SetActive(false);
-        else
+
             currentWorldGenerationProgress = WorldGenerationProgress.Done;
     }
 

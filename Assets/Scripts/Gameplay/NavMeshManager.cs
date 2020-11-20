@@ -22,6 +22,14 @@ public class NavMeshManager : MonoBehaviour
     */
     public void BuildNavMesh()
     {
+        if (WorldGenerator.GetIsItAR())
+        {
+            navMeshSurface.size *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+            navMeshSurface.voxelSize *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+            navMeshSurface.voxelSize = 0.01f;
+            navMeshSurface.overrideTileSize = true;
+            navMeshSurface.tileSize = 1;
+        }
         navMeshSurface.BuildNavMesh();
     }
 }
