@@ -24,7 +24,7 @@ public class Animal : GeneratedAnimal
     protected AnimalCarrying animalCarrying = new AnimalCarrying();
 
     protected InteractionTarget interactionTarget;
-    protected const float interactionDistance = 2f;
+    protected float interactionDistance = 2f;
     protected float distToCollect = 8f;
     protected Vector3 targetPos = new Vector3(0, 0, 0);
 
@@ -87,6 +87,7 @@ public class Animal : GeneratedAnimal
 
     protected bool MoveToTree()
     {
+        float scaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
         if (!interactionTarget)
         {
            // Debug.Log("Hello, im looking for tree");
@@ -100,7 +101,7 @@ public class Animal : GeneratedAnimal
         }
 
         float distToTarget = (transform.position - targetPos).sqrMagnitude;
-        if (distToTarget <= 8f)
+        if (distToTarget <= distToCollect)
         {
             interactionTarget.GetComponent<Tree>().TakeWood(ref animalCarrying);
             interactionTarget.RemoveAnimal(this);
@@ -122,6 +123,7 @@ public class Animal : GeneratedAnimal
 
     protected void MoveToBush()
     {
+        float scaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
         if (!interactionTarget)
         {
             //Debug.Log("Hello, im looking for bush");
@@ -153,6 +155,7 @@ public class Animal : GeneratedAnimal
 
     protected bool MoveToNest()
     {
+        float scaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
         if (nest.mainBuilding)
             targetPos = nest.mainBuilding.entrance.position;
         else

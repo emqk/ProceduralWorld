@@ -11,6 +11,9 @@ public class LandAnimal : Animal
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+
+        interactionDistance *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        distToCollect *= WorldGenerator.worldGenerator.GetScaleMultiplier();
     }
 
     void Update()

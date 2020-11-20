@@ -54,7 +54,7 @@ public class AnimalSpecies : MonoBehaviour
     void CreateBuilding()
     {
         Building building = Instantiate(VegetationGenerator.instance.generatedBuildingPrefab);
-        VegetationGenerator.instance.PlaceOnTerrainOnRandomPosInCircle(building.transform, transform.position, buildingMaxDistanceFromOrigin);
+        VegetationGenerator.instance.PlaceOnTerrainOnRandomPosInCircle(building.transform, transform.position, buildingMaxDistanceFromOrigin * WorldGenerator.worldGenerator.GetScaleMultiplier());
         building.mainBlock.transform.localScale = new Vector3(10, 10, 6) * WorldGenerator.worldGenerator.GetScaleMultiplier();
         building.gameObject.AddComponent<NavMeshObstacle>().carving = true;
         building.GetComponent<NavMeshObstacle>().carveOnlyStationary = true;

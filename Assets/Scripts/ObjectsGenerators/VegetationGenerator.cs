@@ -441,30 +441,34 @@ public class VegetationGenerator : MonoBehaviour
     }
     public void PlaceOnTerrainOnRandomPosInCircle(Transform objToPlace, Vector3 origin, float circleSize, float minHeight = float.MinValue, float maxHeight = float.MaxValue)
     {
-        float terrainChunkSize = TerrainGenerator.mapChunkSize / 2f;
+        float arScaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
 
         Vector2 randCirclePos = Random.insideUnitCircle * circleSize;
         Vector3 randPos = new Vector3(randCirclePos.x, 50, randCirclePos.y) + origin;
         RaycastHit hit = new RaycastHit();
         float waterPosY = Water.globalWaterInstance.transform.position.y;
-        Debug.Log("Water posY: " + waterPosY);
         if (minHeight < waterPosY)
             minHeight = waterPosY;
         if (maxHeight < waterPosY)
             maxHeight = waterPosY + 2;
 
-        Physics.Raycast(randPos, Vector3.down, out hit);
-        while (hit.point.y < waterPosY || hit.point.y < minHeight || hit.point.y > maxHeight)
+        while (!Physics.Raycast(randPos, Vector3.down, out hit) || hit.point.y < waterPosY || hit.point.y < minHeight || hit.point.y > maxHeight)
         {
             randCirclePos = Random.insideUnitCircle * circleSize;
             randPos = new Vector3(randCirclePos.x, 50, randCirclePos.y) + origin;
-            Physics.Raycast(randPos, Vector3.down, out hit);
         }
 
-        objToPlace.transform.position = hit.point - transform.up * 0.05f;
-        objToPlace.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
-        Debug.Log("There is no collisions underneath me!");
+        //Physics.Raycast(randPos, Vector3.down, out hit);
+        //while (hit.point.y < waterPosY || hit.point.y < minHeight || hit.point.y > maxHeight)
+        //{
+        //    randCirclePos = Random.insideUnitCircle * circleSize;
+        //    randPos = new Vector3(randCirclePos.x, 50, randCirclePos.y) + origin;
+        //    Physics.Raycast(randPos, Vector3.down, out hit);
+        //}
+
+        objToPlace.transform.position = hit.point - transform.up * 0.05f * arScaleMultiplier;
+        objToPlace.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
     }
     public bool PlaceObjectOnObjectUnderneath(Transform trans)
     {
