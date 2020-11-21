@@ -13,7 +13,7 @@ public class GeneratedFlower : MonoBehaviour
 
         GenerateLeaves();
         //MergeGrass();
-        AddLODs();
+        //AddLODs();
     }
 
     void GenerateBranch()

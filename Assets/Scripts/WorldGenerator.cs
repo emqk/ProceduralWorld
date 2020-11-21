@@ -16,7 +16,6 @@ public class WorldGenerator : MonoBehaviour
     {
         Nothing, Terrain, Water, Vegetation, AI, Done
     }
-    WorldGenerationProgress currentWorldGenerationProgress = WorldGenerationProgress.Nothing;
 
     private void Awake()
     {
@@ -77,17 +76,14 @@ public class WorldGenerator : MonoBehaviour
     {
         ChangeObjectScaleAR(transform.parent, targetScale);
 
-        currentWorldGenerationProgress = WorldGenerationProgress.Terrain;
        // StartCoroutine(ChangeTerrainParentScale(targetScale));
     }
     private IEnumerator ChangeTerrainParentScale(Vector3 targetScale)
     {
         yield return new WaitForEndOfFrame();
         TerrainGenerator.instance.SetupAndGenerateTerrain();
-        currentWorldGenerationProgress = WorldGenerationProgress.Water;
         yield return new WaitForEndOfFrame();
         WaterGenerator.instance.GenerateWater();
-        currentWorldGenerationProgress = WorldGenerationProgress.Vegetation;
 
         yield return new WaitForEndOfFrame();
         StartCoroutine(GenerateVegetationAfterDelay());
@@ -110,10 +106,8 @@ public class WorldGenerator : MonoBehaviour
 
     private IEnumerator GenerateVegetationAfterDelay()
     {
-       // if(isItAR == false)
-          //  generationProgressText.text = "Generating Vegetation...";
-
-            currentWorldGenerationProgress = WorldGenerationProgress.Vegetation;
+        if(isItAR == false)
+          generationProgressText.text = "Generating Vegetation...";
 
         yield return new WaitForEndOfFrame();
         VegetationGenerator.instance.GenerateSomeRandomVegetation();
@@ -122,10 +116,8 @@ public class WorldGenerator : MonoBehaviour
 
     private IEnumerator GenerateNavMeshAfterDelay()
     {
-       // if(isItAR == false)
-         //   generationProgressText.text = "Generating AI...";
-
-            currentWorldGenerationProgress = WorldGenerationProgress.AI;
+        if(isItAR == false)
+            generationProgressText.text = "Generating AI...";
 
         yield return new WaitForEndOfFrame();
         NavMeshManager.instance.BuildNavMesh();
@@ -133,12 +125,16 @@ public class WorldGenerator : MonoBehaviour
         AnimalsManager.instance.Generate();
 
         yield return new WaitForEndOfFrame();
+
+        if(isItAR == false)
+            generationProgressText.text = "Optimizing...";
+
+        yield return new WaitForEndOfFrame();
+        VegetationGenerator.instance.OptimizeMeshes();
         yield return new WaitForEndOfFrame();
 
         if (isItAR == false)
             generationPanel.SetActive(false);
-
-            currentWorldGenerationProgress = WorldGenerationProgress.Done;
     }
 
     public static void ChangeObjectScaleToAR(Transform targetTrans)
