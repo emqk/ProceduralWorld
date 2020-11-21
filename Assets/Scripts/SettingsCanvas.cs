@@ -84,4 +84,9 @@ public class SettingsCanvas : MonoBehaviour
     {
         FPSDisplay.showFPS = toggle.isOn;
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
