@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MeshCreatorScene.unity
     guid: 9345f81cd9bc49a458cfe7401dd0f033
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/NewAR.unity
     guid: c2fb23eac19737a4ba31bebee05d509d

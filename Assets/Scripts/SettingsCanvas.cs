@@ -1,13 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingsCanvas : MonoBehaviour
 {
     [SerializeField] RectTransform settingsPanel;
     [SerializeField] Button toggleSettingsButton;
 
+    string currSceneName;
+
     private void OnLevelWasLoaded(int level)
     {
+        Scene scene = SceneManager.GetSceneByBuildIndex(level);
+        currSceneName = scene.name;
+
         if (level == 0)
         {
             gameObject.SetActive(false);
@@ -16,6 +22,11 @@ public class SettingsCanvas : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
+
+        if (IsOnCreatorOrMenuScene())
+            Cursor.visible = true;
+        else
+            Cursor.visible = false;
     }
 
     void Start()
@@ -49,8 +60,14 @@ public class SettingsCanvas : MonoBehaviour
         else
         {
             Time.timeScale = 1;
-            Cursor.visible = false;
+            if (!IsOnCreatorOrMenuScene())
+                Cursor.visible = false;
         }
+    }
+
+    bool IsOnCreatorOrMenuScene()
+    {
+        return currSceneName == "MeshCreatorScene" || currSceneName == "MainMenu";
     }
 
     public void SetQualitySettings(Dropdown dropdown)
