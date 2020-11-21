@@ -9,6 +9,7 @@ public class MC_MeshCreatorManager : MonoBehaviour
 
     [Header("UI settings")]
     [SerializeField] GameObject panelsParent;
+    [SerializeField] RectTransform treeSettingsPanel;
 
     [Header("Export UI settings")]
     [SerializeField] GameObject settingsPanel;
@@ -18,9 +19,9 @@ public class MC_MeshCreatorManager : MonoBehaviour
 
     enum ObjType
     {
-        NormalTree, TallTree, ChristmasTree, Bush, Rock, Grass, Flower
+        NormalTree, TallTree, ChristmasTree, Bush, Rock, Grass, Flower, None = 999
     }
-    ObjType currObjType;
+    ObjType currObjType = ObjType.None;
 
     private void Awake()
     {
@@ -44,6 +45,9 @@ public class MC_MeshCreatorManager : MonoBehaviour
 
     void CreateMesh()
     {
+        if (currObjType == ObjType.None)
+            return;
+
         if(latelyCreatedObject)
             Destroy(latelyCreatedObject);
 
@@ -93,5 +97,14 @@ public class MC_MeshCreatorManager : MonoBehaviour
     public void SetCurrObjType(int objType)
     {
         currObjType = (ObjType)objType;
+
+        if (currObjType == ObjType.NormalTree)
+        {
+            treeSettingsPanel.gameObject.SetActive(true);
+        }
+        else
+        {
+            treeSettingsPanel.gameObject.SetActive(false);
+        }
     }
 }
