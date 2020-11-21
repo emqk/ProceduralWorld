@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class MC_SettingsPanel : MonoBehaviour
 {
-    public NormalTreeGenerationData normalTreeGenData = new NormalTreeGenerationData { widthRange = new Vector2Int(4, 4), heightRange = new Vector2Int(5, 5), radius = 1, segmentHeight = 1
+    public NormalTreeGenerationData normalTreeGenData = new NormalTreeGenerationData { widthRange = new Vector2Int(6, 6), heightRange = new Vector2Int(5, 5), radius = 1, segmentHeight = 1
         , branchesAmountRange = new Vector2Int(2, 2), childLevels = 1, nestedTreeAmountRange = new Vector2Int(1, 1) };
 
     public static MC_SettingsPanel instance;
