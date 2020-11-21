@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawMode: 2
-  levelOfDetail: 0
+  levelOfDetail: 1
   noiseScale: 180
   octaves: 5
   persistance: 0.5
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56badd117df40c74a9dc41f8b7062680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelOfDetail: 0
+  levelOfDetail: 4
 --- !u!114 &6923681474873467350
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class FPSDisplay : MonoBehaviour
 {
     float deltaTime = 0.0f;
+
+    public static bool showFPS = false;
 
     void Update()
     {
@@ -12,11 +13,14 @@ public class FPSDisplay : MonoBehaviour
 
     void OnGUI()
     {
+        if (!showFPS)
+            return;
+
         int w = Screen.width, h = Screen.height;
 
         GUIStyle style = new GUIStyle();
 
-        Rect rect = new Rect(w * 0.15f, 0, w, h * 2 / 100);
+        Rect rect = new Rect(0, 0.05f * h, w, h * 2 / 100);
         style.alignment = TextAnchor.UpperLeft;
         style.fontSize = h * 2 / 100;
         style.normal.textColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
