@@ -135,7 +135,7 @@ public class CameraSelector : MonoBehaviour
     {
         GameObject instance = Instantiate(prefab, currPrototype.transform.position, currPrototype.transform.rotation);
         Vector3 targetScale = currPrototype.transform.localScale/* / 500f*/; /* / 500 because then terrain mesh scale is qual to 1x1x1 */
-        instance.transform.localScale *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        instance.transform.localScale *= WorldGenerator.GetScaleMultiplier();
         //WorldGenerator.worldGenerator.GenerateWorldWithScale(targetScale);
 
         currCrosshair = Instantiate(selectorCrosshair, new Vector3(0, -3, 0), Quaternion.Euler(0, 0, 0));

@@ -54,8 +54,8 @@ public class AnimalSpecies : MonoBehaviour
     void CreateBuilding()
     {
         Building building = Instantiate(VegetationGenerator.instance.generatedBuildingPrefab);
-        VegetationGenerator.instance.PlaceOnTerrainOnRandomPosInCircle(building.transform, transform.position, buildingMaxDistanceFromOrigin * WorldGenerator.worldGenerator.GetScaleMultiplier());
-        building.mainBlock.transform.localScale = new Vector3(10, 10, 6) * WorldGenerator.worldGenerator.GetScaleMultiplier();
+        VegetationGenerator.instance.PlaceOnTerrainOnRandomPosInCircle(building.transform, transform.position, buildingMaxDistanceFromOrigin * WorldGenerator.GetScaleMultiplier());
+        building.mainBlock.transform.localScale = new Vector3(10, 10, 6) * WorldGenerator.GetScaleMultiplier();
         building.gameObject.AddComponent<NavMeshObstacle>().carving = true;
         building.GetComponent<NavMeshObstacle>().carveOnlyStationary = true;
         building.GetComponent<NavMeshObstacle>().size = building.mainBlock.transform.lossyScale - new Vector3(0.5f, 0, 0.5f);
@@ -78,7 +78,7 @@ public class AnimalSpecies : MonoBehaviour
             go.GetComponent<Rock>().generatedLeaves.GetComponent<GeneratedLeaves>().VerySlowlyConvertToFlatShading();
             go.transform.position = new Vector3(palisadePoints[i].x, transform.position.y, palisadePoints[i].z);
             VegetationGenerator.instance.PlaceObjectOnObjectUnderneath(go.transform);
-            go.transform.localScale = go.transform.localScale * 2.5f * WorldGenerator.worldGenerator.GetScaleMultiplier();
+            go.transform.localScale = go.transform.localScale * 2.5f * WorldGenerator.GetScaleMultiplier();
             go.AddComponent<NavMeshObstacle>().carving = true;
             go.GetComponent<NavMeshObstacle>().carveOnlyStationary = true;
             go.GetComponent<NavMeshObstacle>().shape = NavMeshObstacleShape.Capsule;
@@ -117,7 +117,7 @@ public class AnimalSpecies : MonoBehaviour
         else
             newAnimal.transform.position = transform.position;
         newAnimal.transform.SetParent(TerrainGenerator.instance.transform.parent);
-        newAnimal.transform.localScale *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        newAnimal.transform.localScale *= WorldGenerator.GetScaleMultiplier();
         Animal animal = newAnimal.GetComponent<Animal>();
         animal.FirstGeneration(animalSettings);
         animal.SetNest(this);

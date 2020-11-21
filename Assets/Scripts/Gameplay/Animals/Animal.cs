@@ -87,7 +87,7 @@ public class Animal : GeneratedAnimal
 
     protected bool MoveToTree()
     {
-        float scaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
+        float scaleMultiplier = WorldGenerator.GetScaleMultiplier();
         if (!interactionTarget)
         {
            // Debug.Log("Hello, im looking for tree");
@@ -123,7 +123,7 @@ public class Animal : GeneratedAnimal
 
     protected void MoveToBush()
     {
-        float scaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
+        float scaleMultiplier = WorldGenerator.GetScaleMultiplier();
         if (!interactionTarget)
         {
             //Debug.Log("Hello, im looking for bush");
@@ -155,7 +155,7 @@ public class Animal : GeneratedAnimal
 
     protected bool MoveToNest()
     {
-        float scaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
+        float scaleMultiplier = WorldGenerator.GetScaleMultiplier();
         if (nest.mainBuilding)
             targetPos = nest.mainBuilding.entrance.position;
         else

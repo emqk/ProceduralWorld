@@ -38,13 +38,16 @@ public class WorldGenerator : MonoBehaviour
         else
             return arParent = arRoot.transform;
     }
-    public float GetScaleMultiplier()
+    public static float GetScaleMultiplier()
     {
         return GetIsItAR() ? 0.01f : 1;
     }
 
     public static bool GetIsItAR()
     {
+        if (!worldGenerator)
+            return false;
+
         return worldGenerator.isItAR;
     }
 

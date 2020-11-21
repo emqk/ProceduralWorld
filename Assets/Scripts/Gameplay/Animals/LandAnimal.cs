@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class LandAnimal : Animal
@@ -10,10 +8,10 @@ public class LandAnimal : Animal
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.speed *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        agent.speed *= WorldGenerator.GetScaleMultiplier();
 
-        interactionDistance *= WorldGenerator.worldGenerator.GetScaleMultiplier();
-        distToCollect *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        interactionDistance *= WorldGenerator.GetScaleMultiplier();
+        distToCollect *= WorldGenerator.GetScaleMultiplier();
     }
 
     void Update()

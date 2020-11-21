@@ -441,7 +441,7 @@ public class VegetationGenerator : MonoBehaviour
     public void PlaceOnTerrainOnRandomPos(Transform objToPlace, float minHeight = float.MinValue, float maxHeight = float.MaxValue)
     {
         //float arScaleMultiplier = WorldGenerator.GetIsItAR() ? 482 : 1;
-        float arScaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
+        float arScaleMultiplier = WorldGenerator.GetScaleMultiplier();
 
         float terrainChunkSize = TerrainGenerator.mapChunkSize * TerrainGenerator.instance.transform.parent.localScale.x;
         if (WorldGenerator.GetIsItAR()) // is AR
@@ -485,9 +485,9 @@ public class VegetationGenerator : MonoBehaviour
         if (minHeight < waterPosY)
             minHeight = waterPosY;
         if (maxHeight < waterPosY)
-            maxHeight = waterPosY + 2 * WorldGenerator.worldGenerator.GetScaleMultiplier();
+            maxHeight = waterPosY + 2 * WorldGenerator.GetScaleMultiplier();
 
-        waterPosY *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        waterPosY *= WorldGenerator.GetScaleMultiplier();
 
         //while (!Physics.Raycast(randPos, Vector3.down, out hit) && hit.point.y < waterPosY || hit.point.y < minHeight || hit.point.y > maxHeight)
         //{
@@ -523,7 +523,7 @@ public class VegetationGenerator : MonoBehaviour
     }
     public void PlaceOnTerrainOnRandomPosInCircle(Transform objToPlace, Vector3 origin, float circleSize, float minHeight = float.MinValue, float maxHeight = float.MaxValue)
     {
-        float arScaleMultiplier = WorldGenerator.worldGenerator.GetScaleMultiplier();
+        float arScaleMultiplier = WorldGenerator.GetScaleMultiplier();
 
         Vector2 randCirclePos = Random.insideUnitCircle * circleSize;
         Vector3 randPos = new Vector3(randCirclePos.x, 50, randCirclePos.y) + origin;
@@ -572,8 +572,8 @@ public class VegetationGenerator : MonoBehaviour
         Vector3[] values = new Vector3[pointsCount];
         for (int i = 0; i < pointsCount; i++)
         {
-            float x = Mathf.Sin(Mathf.PI * (i * (2f / pointsCount))) * range * WorldGenerator.worldGenerator.GetScaleMultiplier();
-            float y = Mathf.Cos(Mathf.PI * (i * (2f / pointsCount))) * range * WorldGenerator.worldGenerator.GetScaleMultiplier();
+            float x = Mathf.Sin(Mathf.PI * (i * (2f / pointsCount))) * range * WorldGenerator.GetScaleMultiplier();
+            float y = Mathf.Cos(Mathf.PI * (i * (2f / pointsCount))) * range * WorldGenerator.GetScaleMultiplier();
             values[i] = new Vector3(x, 0, y) + source;
         }
 

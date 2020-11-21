@@ -9,12 +9,12 @@ public class AirAnimal : Animal
 
     private void Start()
     {
-        flyHeight *= WorldGenerator.worldGenerator.GetScaleMultiplier();
-        flyHorizontalSpeed *= WorldGenerator.worldGenerator.GetScaleMultiplier();
-        flyVerticalSpeed *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        flyHeight *= WorldGenerator.GetScaleMultiplier();
+        flyHorizontalSpeed *= WorldGenerator.GetScaleMultiplier();
+        flyVerticalSpeed *= WorldGenerator.GetScaleMultiplier();
 
-        interactionDistance *= WorldGenerator.worldGenerator.GetScaleMultiplier();
-        distToCollect *= WorldGenerator.worldGenerator.GetScaleMultiplier();
+        interactionDistance *= WorldGenerator.GetScaleMultiplier();
+        distToCollect *= WorldGenerator.GetScaleMultiplier();
     }
 
     void Update()
