@@ -12,8 +12,8 @@ public class GeneratedFlower : MonoBehaviour
         GenerateBranch();
 
         GenerateLeaves();
-        //MergeGrass();
-        //AddLODs();
+        MergeGrass();
+        AddLODs();
     }
 
     void GenerateBranch()
@@ -39,11 +39,12 @@ public class GeneratedFlower : MonoBehaviour
         if (GetComponent<LODGroup>())
         {
             LOD[] lods = new LOD[1];
-            Renderer[] renderers = new Renderer[2];
-            renderers[0] = generatedBranch.GetComponent<Renderer>();
-            renderers[1] = generatedLeaves.GetComponent<Renderer>();
+            Renderer[] renderers = new Renderer[1];
+            //renderers[0] = generatedBranch.GetComponent<Renderer>();
+            //renderers[1] = generatedLeaves.GetComponent<Renderer>();
+            renderers[0] = mergedMesh.GetComponent<Renderer>();
 
-            lods[0] = new LOD(0.015f, renderers);
+            lods[0] = new LOD(0.016f, renderers);
 
             GetComponent<LODGroup>().SetLODs(lods);
             GetComponent<LODGroup>().RecalculateBounds();
@@ -53,10 +54,16 @@ public class GeneratedFlower : MonoBehaviour
     void MergeGrass()
     {
         //Merge objects to one mesh
+        //MeshFilter[] meshFilters = new MeshFilter[2];
+        //meshFilters[0] = generatedBranch.GetComponent<MeshFilter>();
+        //meshFilters[1] = generatedLeaves.GetComponent<MeshFilter>();
+
+        //mergedMesh = GeneratedMesh.CombineMeshes(transform, meshFilters);
+
         MeshFilter[] meshFilters = new MeshFilter[2];
         meshFilters[0] = generatedBranch.GetComponent<MeshFilter>();
         meshFilters[1] = generatedLeaves.GetComponent<MeshFilter>();
 
-        mergedMesh = GeneratedMesh.CombineMeshes(transform, meshFilters);
+        mergedMesh = GeneratedMesh.CombineMeshesManyMats(transform, meshFilters);
     }
 }

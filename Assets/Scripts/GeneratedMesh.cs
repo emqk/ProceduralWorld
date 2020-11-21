@@ -89,6 +89,50 @@ public class GeneratedMesh : MonoBehaviour
         return mergedFood;
     }
 
+    public static GameObject CombineMeshesManyMats(Transform parent, MeshFilter[] targets)
+    {
+        //posBefore is here because during merge objects everything must be on pos(0,0,0)
+        Vector3 posBefore = parent.position;
+        parent.position = new Vector3(0, 0, 0);
+
+        MeshFilter[] meshFilters = targets;
+
+        List<Material> materials = new List<Material>(1);
+
+        CombineInstance[] combine = new CombineInstance[meshFilters.Length];
+        int count = meshFilters.Length;
+        for (int i = 0; i < count; i++)
+        {
+            if (!materials.Contains(targets[i].GetComponent<Renderer>().material))
+            {
+                materials.Add(targets[i].GetComponent<Renderer>().material);
+            }
+
+            combine[i].mesh = meshFilters[i].sharedMesh;
+            combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
+            Destroy(meshFilters[i].gameObject);
+            //meshFilters[i].gameObject.SetActive(false);
+        }
+
+        //Debug.Log("CombinedMeshes count: " + combine.Length);
+
+        GameObject mergedFood = new GameObject("Merged");
+        mergedFood.transform.SetParent(parent);
+        mergedFood.transform.localPosition = new Vector3(0, 0, 0);
+        mergedFood.AddComponent<MeshFilter>();
+        mergedFood.AddComponent<MeshRenderer>();
+        //mergedFood.GetComponent<Renderer>().materials = targets[0].GetComponent<Renderer>().materials;
+        mergedFood.GetComponent<Renderer>().materials = materials.ToArray();
+
+        mergedFood.GetComponent<MeshFilter>().mesh = new Mesh();
+        mergedFood.GetComponent<MeshFilter>().mesh.CombineMeshes(combine, false, true);
+
+        parent.position = posBefore;
+
+        return mergedFood;
+    }
+
+
     /*
         void Update()
         {

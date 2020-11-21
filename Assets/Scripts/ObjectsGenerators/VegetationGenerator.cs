@@ -21,7 +21,7 @@ public class VegetationGenerator : MonoBehaviour
     List<Bush> bushes = new List<Bush>();
     List<Tree> trees = new List<Tree>();
     List<GameObject> grasses = new List<GameObject>();
-    List<GameObject> flower = new List<GameObject>();
+    //List<GameObject> flower = new List<GameObject>();
 
     public Building generatedBuildingPrefab;
 
@@ -139,17 +139,17 @@ public class VegetationGenerator : MonoBehaviour
             }
         }
 
-        mergeGroupSize = 2;
-        count = flower.Count / mergeGroupSize;
-        for (int i = 0; i < count; i++)
-        {
-            GameObject[] flowersToMerge = FindClosestFlowerGroup(mergeGroupSize);
-            MergeFlowers(flowersToMerge);
-            foreach (GameObject flowerToClean in flowersToMerge)
-            {
-                Destroy(flowerToClean);
-            }
-        }
+        //mergeGroupSize = 2;
+        //count = flower.Count / mergeGroupSize;
+        //for (int i = 0; i < count; i++)
+        //{
+        //    GameObject[] flowersToMerge = FindClosestFlowerGroup(mergeGroupSize);
+        //    MergeFlowers(flowersToMerge);
+        //    foreach (GameObject flowerToClean in flowersToMerge)
+        //    {
+        //        Destroy(flowerToClean);
+        //    }
+        //}
     }
     GameObject[] FindClosestGrassGroup(int groupSize)
     {
@@ -179,34 +179,34 @@ public class VegetationGenerator : MonoBehaviour
 
         return group;
     }
-    GameObject[] FindClosestFlowerGroup(int groupSize)
-    {
-        GameObject[] group = new GameObject[groupSize];
-        GameObject startFlower = flower[0];
-        group[0] = startFlower;
-        flower.RemoveAt(0);
+    //GameObject[] FindClosestFlowerGroup(int groupSize)
+    //{
+    //    GameObject[] group = new GameObject[groupSize];
+    //    GameObject startFlower = flower[0];
+    //    group[0] = startFlower;
+    //    flower.RemoveAt(0);
 
-        for (int i = 1; i < groupSize; i++)
-        {
-            float closestDist = float.MaxValue;
-            int closestIndex = -1;
+    //    for (int i = 1; i < groupSize; i++)
+    //    {
+    //        float closestDist = float.MaxValue;
+    //        int closestIndex = -1;
 
-            for (int j = 0; j < flower.Count; j++)
-            {
-                float currDist = (startFlower.transform.position - flower[j].transform.position).sqrMagnitude;
-                if (currDist < closestDist)
-                {
-                    closestDist = currDist;
-                    closestIndex = j;
-                }
-            }
+    //        for (int j = 0; j < flower.Count; j++)
+    //        {
+    //            float currDist = (startFlower.transform.position - flower[j].transform.position).sqrMagnitude;
+    //            if (currDist < closestDist)
+    //            {
+    //                closestDist = currDist;
+    //                closestIndex = j;
+    //            }
+    //        }
 
-            group[i] = flower[closestIndex];
-            flower.RemoveAt(closestIndex);
-        }
+    //        group[i] = flower[closestIndex];
+    //        flower.RemoveAt(closestIndex);
+    //    }
 
-        return group;
-    }
+    //    return group;
+    //}
 
     public GameObject SpawnTree(NormalTreeGenerationData treeGenData, bool findGround)
     {
@@ -300,7 +300,7 @@ public class VegetationGenerator : MonoBehaviour
         if (findGround)
             PlaceOnTerrainOnRandomPos(instance.transform);
 
-        flower.Add(instance);
+        //flower.Add(instance);
 
         return instance;
     }
@@ -343,43 +343,43 @@ public class VegetationGenerator : MonoBehaviour
         mergedMesh.GetComponent<LODGroup>().SetLODs(lods);
         mergedMesh.GetComponent<LODGroup>().RecalculateBounds();      
     }
-    void MergeFlowers(GameObject[] _flowersToMerge)
-    {
-        GameObject mergedMesh = new GameObject("MergedFlowerGroup");
-        Vector3 avgPos = GetAvgPosOfObjs(_flowersToMerge);
-        mergedMesh.transform.position = avgPos;
-        //Merge objects to one mesh
-        int count = _flowersToMerge.Length;
-        MeshFilter[] meshFilters = new MeshFilter[count];
-        List<GameObject> flowerLeaves = new List<GameObject>(_flowersToMerge.Length);
-        for (int i = 0; i < count; i++)
-        {
-            flowerLeaves.Add(_flowersToMerge[i].GetComponent<GeneratedFlower>().generatedLeaves.gameObject);
-            _flowersToMerge[i].GetComponent<GeneratedFlower>().generatedLeaves.transform.parent = null;
-            meshFilters[i] = _flowersToMerge[i].GetComponent<GeneratedFlower>().generatedBranch.GetComponent<MeshFilter>();
-            _flowersToMerge[i].transform.position -= avgPos;
-        }
+    //void MergeFlowers(GameObject[] _flowersToMerge)
+    //{
+    //    GameObject mergedMesh = new GameObject("MergedFlowerGroup");
+    //    Vector3 avgPos = GetAvgPosOfObjs(_flowersToMerge);
+    //    mergedMesh.transform.position = avgPos;
+    //    //Merge objects to one mesh
+    //    int count = _flowersToMerge.Length;
+    //    MeshFilter[] meshFilters = new MeshFilter[count];
+    //    List<GameObject> flowerLeaves = new List<GameObject>(_flowersToMerge.Length);
+    //    for (int i = 0; i < count; i++)
+    //    {
+    //        flowerLeaves.Add(_flowersToMerge[i].GetComponent<GeneratedFlower>().generatedLeaves.gameObject);
+    //        _flowersToMerge[i].GetComponent<GeneratedFlower>().generatedLeaves.transform.parent = null;
+    //        meshFilters[i] = _flowersToMerge[i].GetComponent<GeneratedFlower>().generatedBranch.GetComponent<MeshFilter>();
+    //        _flowersToMerge[i].transform.position -= avgPos;
+    //    }
 
-        GeneratedMesh.CombineMeshes(mergedMesh.transform, meshFilters);
+    //    GeneratedMesh.CombineMeshes(mergedMesh.transform, meshFilters);
 
-        /////////////////////////
+    //    /////////////////////////
 
-        //AddLods
-        mergedMesh.AddComponent<LODGroup>();
-        LOD[] lods = new LOD[1];
-        Renderer[] renderers = new Renderer[1 + _flowersToMerge.Length];
-        renderers[0] = mergedMesh.transform.GetChild(0).GetComponent<Renderer>();
-        lods[0] = new LOD(0.1f, renderers);
+    //    //AddLods
+    //    mergedMesh.AddComponent<LODGroup>();
+    //    LOD[] lods = new LOD[1];
+    //    Renderer[] renderers = new Renderer[1 + _flowersToMerge.Length];
+    //    renderers[0] = mergedMesh.transform.GetChild(0).GetComponent<Renderer>();
+    //    lods[0] = new LOD(0.1f, renderers);
 
-        for (int i = 1; i < renderers.Length; i++)
-        {
-            flowerLeaves[i - 1].transform.parent = mergedMesh.transform;
-            renderers[i] = flowerLeaves[i - 1].GetComponent<Renderer>();
-        }
+    //    for (int i = 1; i < renderers.Length; i++)
+    //    {
+    //        flowerLeaves[i - 1].transform.parent = mergedMesh.transform;
+    //        renderers[i] = flowerLeaves[i - 1].GetComponent<Renderer>();
+    //    }
 
-        mergedMesh.GetComponent<LODGroup>().SetLODs(lods);
-        mergedMesh.GetComponent<LODGroup>().RecalculateBounds();
-    }
+    //    mergedMesh.GetComponent<LODGroup>().SetLODs(lods);
+    //    mergedMesh.GetComponent<LODGroup>().RecalculateBounds();
+    //}
     Vector3 GetAvgPosOfObjs(GameObject[] objs)
     {
         int count = objs.Length;
