@@ -5,7 +5,6 @@ using UnityEngine.XR.ARFoundation;
 public class CameraSelector : MonoBehaviour
 {
     public Camera arCamera;
-    public GameObject selectorCrosshair;
     GameObject currCrosshair;
 
     GameObject currPrototype;
@@ -41,7 +40,7 @@ public class CameraSelector : MonoBehaviour
         {
             if (wasSpawned)
             {
-                currCrosshair.transform.position = hit.point;
+                //currCrosshair.transform.position = hit.point;
             }
             else
             {
@@ -138,7 +137,7 @@ public class CameraSelector : MonoBehaviour
         instance.transform.localScale *= WorldGenerator.GetScaleMultiplier();
         //WorldGenerator.worldGenerator.GenerateWorldWithScale(targetScale);
 
-        currCrosshair = Instantiate(selectorCrosshair, new Vector3(0, -3, 0), Quaternion.Euler(0, 0, 0));
+        //currCrosshair = Instantiate(selectorCrosshair, new Vector3(0, -3, 0), Quaternion.Euler(0, 0, 0));
         wasSpawned = true;
         Destroy(currPrototype);
 
