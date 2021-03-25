@@ -1,9 +1,11 @@
 # ProceduralWorld
-Low poly mesh generator made in Unity.
+Low poly mesh generator made in Unity. All meshes are generated directly in this software, with ability to export them as fbx files.
 
 # Features
 - Customizable tree mesh generator
 - Random vegetation mesh generator (grass, flowers, etc.)
+- Combine meshes (leaves, branches) to increase performance
+- LOD generation
 - Export to FBX
 - Works on Windows and Android (also with AR)
 
